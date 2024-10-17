@@ -110,11 +110,11 @@ const Footer = () => {
                             <FaWhatsapp className='cursor-pointer hover:text-primary
                              hover:scale-105 duration-200'/>
                         </a>
-                        <a href="https://www.instagram.com/arrowsmartsolutions">
+                        <a target="_blank" href="https://www.instagram.com/arrowsmartsolutions">
                             <FaInstagram className='cursor-pointer hover:text-primary
                              hover:scale-105 duration-200'/>
                         </a>
-                        <a href="https://x.com/arrowsmartlife">
+                        <a target="_blank" href="https://x.com/arrowsmartlife">
                             <FaTwitter className='cursor-pointer hover:text-primary
                              hover:scale-105 duration-200'/>
                         </a>
