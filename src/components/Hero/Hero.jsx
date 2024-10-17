@@ -26,8 +26,7 @@ export const FadeUp = (delay) => {
 const Hero = () => {
   return (
     <section className='bg-light overflow-hidden' >
-        <Navbar />
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[450px]" relative>
+      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[450px] mt-28" relative>
         {/*Brand Info*/}
         <div className='text-center md:text-left space-y-10 lg:max-w-[600px]'>
             <motion.h1

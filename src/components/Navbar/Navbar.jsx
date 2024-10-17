@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoMdMenu } from "react-icons/io";
+import { FaChevronUp } from 'react-icons/fa6';
 import {motion} from "framer-motion";
 
 const NavbarMenu = [
@@ -38,9 +39,18 @@ const Navbar = () => {
       initial={{opacity:0, y: -50 }}
       animate={{opacity:1, y:0}}
 
-       className='container py-10 flex justify-between items-center'>
+       className='container py-8 flex justify-between
+        items-center fixed z-50 bg-light
+         bg-opacity-50 backdrop-blur-md'>
       {/*Logo section*/}
-      <div>
+      <div className='flex flex-row justify-start my-auto -mx-0'>
+        <div className='w-8 h-8 rounded-full bg-secondary'>
+          <div>
+            <div className='flex flex-col items-center justify-center m-auto pt-2'>
+             <FaChevronUp className=' text-white flex items-center justify-center m-auto dark2'/>
+            </div>
+          </div>
+        </div>
         <h1 className='font-bold text-2xl'>Arrow Smart Solutions</h1>
       </div>
       {/*Menu section*/}
