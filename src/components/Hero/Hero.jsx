@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import hero from '../../assets/hero.png';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import {animate, easeInOut, motion} from 'framer-motion';
 
@@ -57,7 +57,7 @@ const Hero = () => {
           initial={{x:50, opacity:0}}
           animate={{x:0, opacity:1}}
           transition={{duration:0.6, delay: 0.4, ease:easeInOut}}
-           src="./src/assets/hero.png" 
+           src={hero}
           alt="image of developers and IT support technicians"
            className='rounded-xl w-[400px xl:w-[600px] relative z-10 drop-shadow' 
           />
