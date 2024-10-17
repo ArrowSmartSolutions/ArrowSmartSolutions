@@ -23,7 +23,7 @@ const Footer = () => {
                             </div>
                         </div>
                         </div>
-                        <h1 className='font-bold text-2xl'>Arrow Smart Solutions</h1>
+                        <h1 className='font-bold text-2xl md:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
                     </div>
                     <p className='text-dark2'>
                     Arrow Smart Solutions offers reliable,

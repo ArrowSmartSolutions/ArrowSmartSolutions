@@ -41,9 +41,9 @@ const Navbar = () => {
 
        className='container py-8 flex justify-between
         items-center fixed z-50 bg-light
-         bg-opacity-50 backdrop-blur-md'>
+         bg-opacity-50 backdrop-blur-md min-w-100'>
       {/*Logo section*/}
-      <div className='flex flex-row justify-start my-auto -mx-0'>
+      <div className='flex flex-row justify-start my-auto -mx-0 sm:scale-50'>
         <div className='w-8 h-8 rounded-full bg-secondary'>
           <div>
             <div className='flex flex-col items-center justify-center m-auto pt-2'>
@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <h1 className='font-bold text-2xl'>Arrow Smart Solutions</h1>
+        <h1 className='font-bold text-2xl md:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
       </div>
       {/*Menu section*/}
       <div className='hidden lg:block'>
