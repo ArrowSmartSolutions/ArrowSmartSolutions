@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <h1 className='font-bold text-2xl md:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
+        <h1 className='font-bold text-2xl md:text-xl sm:text-sm whitespace-nowrap'>Arrow Smart Solutions</h1>
       </div>
       {/*Menu section*/}
       <div className='hidden lg:block'>
