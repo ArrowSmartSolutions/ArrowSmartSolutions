@@ -34,16 +34,16 @@ const NavbarMenu = [
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='w-full'>
       <motion.div
       initial={{opacity:0, y: -50 }}
       animate={{opacity:1, y:0}}
 
-       className='container py-8 flex justify-between
+       className='py-8 flex justify-between px-16
         items-center fixed z-50 bg-light
-         bg-opacity-50 backdrop-blur-md min-w-100'>
+         bg-opacity-50 backdrop-blur-md w-screen overflow-x-hidden'>
       {/*Logo section*/}
-      <div className='flex flex-row justify-start my-auto -mx-0 sm:scale-50'>
+      <div className='flex flex-row space-evenly my-auto -mx-0 sm:scale-100 w-100vw'>
         <div className='w-8 h-8 rounded-full bg-secondary'>
           <div>
             <div className='flex flex-col items-center justify-center m-auto pt-2'>
