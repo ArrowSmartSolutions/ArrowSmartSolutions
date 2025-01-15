@@ -55,7 +55,7 @@ const StyledWrapper = styled.div`
 
   .title {
     font-size: 28px;
-    color: royalblue;
+    color: #333333;
     font-weight: 600;
     letter-spacing: -1px;
     position: relative;
@@ -145,13 +145,13 @@ const StyledWrapper = styled.div`
   }
 
   .form label .input:valid + span {
-    color: green;
+    color: #ed801c;
   }
 
   .submit {
     border: none;
     outline: none;
-    background-color: royalblue;
+    background-color: #1e438a;
     padding: 10px;
     border-radius: 10px;
     color: #fff;
