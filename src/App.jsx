@@ -4,7 +4,7 @@ import Services from './components/Services/Services';
 import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Contact from './components/Contact/Contact'
+import Contact from './components/Contact/Contact';
 
 const App = () => {
   return (
