@@ -18,11 +18,11 @@ const Form = () => {
     For urgent inquiries, contact us on WhatsApp or Email. Your privacy is important to us. </p>
         <label htmlFor='firstname'>
             <input 
-            required="" 
+            required 
             name='firstname'
             placeholder="" 
             type="text"
-            autoComplete='off' 
+            autocomplete='off' 
             class="input" />
             <span>Firstname</span>
         </label>
@@ -30,9 +30,9 @@ const Form = () => {
         <label htmlFor='lastname'>
             <input 
             name='lastname' 
-            required="" 
+            required 
             placeholder=""
-            autoComplete='off'
+            autocomplete='off'
             type="text" 
             class="input" />
             <span>Lastname</span>
@@ -40,11 +40,10 @@ const Form = () => {
             
     <label htmlFor='email'>
         <input 
-          required=""
+          required
           placeholder=""
           name='email'
           type="email"
-          autoComplete='off'
           class="input" />
         <span>Email</span>
     </label> 
@@ -52,10 +51,10 @@ const Form = () => {
     <label>
         <input
         name='enquiry' 
-        required="" 
+        required
         placeholder="" 
         type="text" 
-        autoComplete='off'
+        autocomplete='off'
         class="input" />
         <span>Type Enquiry Here</span>
     </label> 
