@@ -21,7 +21,9 @@ const Form = () => {
             required="" 
             name='firstname'
             placeholder="" 
-            type="text" class="input" />
+            type="text"
+            autoComplete='off' 
+            class="input" />
             <span>Firstname</span>
         </label>
 
@@ -29,7 +31,10 @@ const Form = () => {
             <input 
             name='lastname' 
             required="" 
-            placeholder="" type="text" class="input" />
+            placeholder=""
+            autoComplete='off'
+            type="text" 
+            class="input" />
             <span>Lastname</span>
         </label>
             
@@ -38,7 +43,8 @@ const Form = () => {
           required=""
           placeholder=""
           name='email'
-          type="email" 
+          type="email"
+          autoComplete='off'
           class="input" />
         <span>Email</span>
     </label> 
@@ -49,6 +55,7 @@ const Form = () => {
         required="" 
         placeholder="" 
         type="text" 
+        autoComplete='off'
         class="input" />
         <span>Type Enquiry Here</span>
     </label> 
