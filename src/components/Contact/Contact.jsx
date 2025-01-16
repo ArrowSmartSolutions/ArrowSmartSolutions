@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Form = () => {
   return (
     <StyledWrapper>
-      <form class="form">
+      <form 
+      action='https://formspree.io/f/xbllbebq'
+      method='POST'
+      class="form">
     <p class="title centertxt">
       Contact Us
     </p>
@@ -12,28 +16,51 @@ const Form = () => {
       We’d love to hear from you! Please complete the form below with accurate details, and we’ll respond within 24–48 hours. 
     <br/>
     For urgent inquiries, contact us on WhatsApp or Email. Your privacy is important to us. </p>
-        <label>
-            <input required="" placeholder="" type="text" class="input" />
+        <label htmlFor='firstname'>
+            <input 
+            required 
+            name='firstname'
+            placeholder="" 
+            type="text"
+            autocomplete='off' 
+            class="input" />
             <span>Firstname</span>
         </label>
 
-        <label>
-            <input required="" placeholder="" type="text" class="input" />
+        <label htmlFor='lastname'>
+            <input 
+            name='lastname' 
+            required 
+            placeholder=""
+            autocomplete='off'
+            type="text" 
+            class="input" />
             <span>Lastname</span>
         </label>
             
-    <label>
-        <input required="" placeholder="" type="email" class="input" />
+    <label htmlFor='email'>
+        <input 
+          required
+          placeholder=""
+          name='email'
+          type="email"
+          class="input" />
         <span>Email</span>
     </label> 
     
     <label>
-        <input required="" placeholder="" type="text" class="input" />
+        <input
+        name='enquiry' 
+        required
+        placeholder="" 
+        type="text" 
+        autocomplete='off'
+        class="input" />
         <span>Type Enquiry Here</span>
     </label> 
     
         
-    <button class="submit">Submit</button>
+    <button type='submit' class="submit">Submit</button>
     <p class="signin">By clicking on submit indicates that you agree with Arrow Smart Solutions' <a href="#">Terms and Conditions</a> of service. </p>
 </form>
     </StyledWrapper>
