@@ -37,7 +37,7 @@ const Hero = () => {
             className='text-2xl lg:text-5xl font-bold !leading-snug'> 
               Get affordable & reliable 
               <span className='text-secondary'> IT support</span> or simply a professional 
-              <span className="text-secondary"> landing page</span>.
+              <span className="text-secondary"> Website</span>.
             </ motion.h1>
             <motion.div
             variants={FadeUp(0.8)}

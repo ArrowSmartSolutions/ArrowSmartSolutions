@@ -1,11 +1,13 @@
 import { div } from 'framer-motion/client';
 import React from 'react';
-import { IoPulseOutline } from 'react-icons/io5';
+import { IoAnalytics, IoPulseOutline } from 'react-icons/io5';
 import { RiComputerLine } from 'react-icons/ri';
 import { SiWindowsxp } from 'react-icons/si';
 import { TbWorldWww } from 'react-icons/tb';
 import { TiCloudStorage } from 'react-icons/ti';
 import { motion } from 'framer-motion';
+import { MdDesignServices, MdDomain } from 'react-icons/md';
+import { GrDomain } from 'react-icons/gr';
 
 const ServicesData = [
     {
@@ -42,7 +44,28 @@ const ServicesData = [
       link:"#",
       icon:<IoPulseOutline />,
       delay: 0.6,
-  }
+  },
+  {
+      id:2,
+      title:"UI/UX Design",
+      link:"#",
+      icon:<MdDesignServices />,
+      delay: 0.7,
+  },
+    {
+        id:2,
+        title:"Analytics & Reporting",
+        link:"#",
+        icon:<IoAnalytics />,
+        delay: 0.8,
+    },
+    {
+        id:2,
+        title:"Third Party Domain & Hosting",
+        link:"#",
+        icon:<GrDomain />,
+        delay: 0.3,
+    },
 ];
 
 const SlideLeft = (delay) => {
