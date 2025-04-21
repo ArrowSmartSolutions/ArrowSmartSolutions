@@ -71,13 +71,13 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                   </a>
               </li>
             ))}
-            <button className='primary-btn'>Get Quote</button>
+            <button aria-label="Get Quote" className='primary-btn'>Get Quote</button>
 
         </ul>
       </div>
         {/* Mobile Hamburger menu section */}
         <div className='lg:hidden'>
-          <button onClick={toggleMenu} className='text-4xl'>
+          <button onClick={toggleMenu} aria-label='Menu Toggle Key' className='text-4xl'>
             {isMenuOpen ? <IoMdClose /> : <IoMdMenu />}
           </button>
         </div>

@@ -91,13 +91,14 @@ const Footer = () => {
                     <h1 className='text-2xl font-bold'>Newsletter</h1>
                     <div className='flex items-center'>
                         <input 
-                        type="text"
+                        type="email"
                         placeholder='Enter email address'
                         className='p-3 rounded-s-xl bg-white
                         w-full py-4 focus:ring-0
                             focus:outline-none placeholder:text-dark2'
                         />
                         <button
+                        aria-label="Subscribe to newsletter button"
                         className='bg-primary text-white
                         font-semibold py-4 px-6 rounded-e-xl'
                         >

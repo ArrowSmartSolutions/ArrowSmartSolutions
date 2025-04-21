@@ -60,7 +60,7 @@ const Form = () => {
     </label> 
     
         
-    <button type='submit' class="submit">Submit</button>
+    <button aria-label="Submit Cotact Form" type='submit' class="submit">Submit</button>
     <p class="signin">By clicking on submit indicates that you agree with Arrow Smart Solutions' <a href="#">Terms and Conditions</a> of service. </p>
 </form>
     </StyledWrapper>
