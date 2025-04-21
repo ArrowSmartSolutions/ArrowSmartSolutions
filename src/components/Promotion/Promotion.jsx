@@ -22,7 +22,7 @@ const Promotion = () => {
           New here? Get 10% off your first website! Contact us today and unlock exclusive perks made just for you.
           </div>
           <button className="select-none border-none outline-none text-white uppercase font-bold text-xs py-3 px-6 bg-[rgb(33_150_243)] rounded-lg w-[90%] [text-shadow:0px_4px_18px_#2c3442]">
-          <p className="text-center">(Coming soon!)</p>
+          <p className="text-center">Contact Us Now!</p>
         </button>
         </div>
         
