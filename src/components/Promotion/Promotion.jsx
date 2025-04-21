@@ -15,8 +15,8 @@ const Promotion = () => {
           <div className="font-extrabold uppercase text-[rgba(255,255,255,0.64)] mt-2.5 text-[25px] tracking-[1px]">
             Exclusive Offer
           </div>
-          <div className="text-white font-extrabold text-[40px] [text-shadow:0px_0px_10px_rgba(0,0,0,0.42)]">
-            Code: FIRSTWEB2025
+          <div className="text-white font-bold text-[30px] [text-shadow:0px_0px_10px_rgba(0,0,0,0.42)]">
+            Promo code: FIRSTWEB2025
           </div>
           <div className="font-regular text-[rgba(255,255,255,0.6)] mt-2.5 text-sm">
           New here? Get 10% off your first website! Contact us today and unlock exclusive perks made just for you.
