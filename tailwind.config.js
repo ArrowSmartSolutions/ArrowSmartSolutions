@@ -3,6 +3,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        xs: '0.875rem',
+        sm: '1.025rem',
+        base: '1.125rem',
+        lg: '1.375rem',
+        xl: '1.5rem',
+        '2xl': '1.875rem',
+        '3xl': '2.25rem',
+        '4xl': '2.875rem',
+        '5xl': '3.5rem',
+      },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
       },

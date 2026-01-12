@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Component inspired by https://uiverse.io/Yaya12085/empty-horse-27
 // License: MIT
 // Modifications: Adjusted fonts and colors to match the website theme
 
 const Promotion = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
   return (
     <div className="flex justify-center overflow-hidden h-full">
       <div className="flex flex-col items-center justify-around
@@ -16,12 +22,12 @@ const Promotion = () => {
             Exclusive Offer
           </div>
           <div className="text-white font-bold text-[30px] [text-shadow:0px_0px_10px_rgba(0,0,0,0.42)]">
-            Promo code: FIRSTWEB2025
+            Promo code: FIRSTWEB2026
           </div>
           <div className="font-regular text-[rgba(255,255,255,0.6)] mt-2.5 text-sm">
           New here? Get 10% off your first website! Contact us today and unlock exclusive perks made just for you.
           </div>
-          <button className="select-none border-none outline-none text-white uppercase font-bold text-xs py-3 px-6 bg-[rgb(33_150_243)] rounded-lg w-[90%] [text-shadow:0px_4px_18px_#2c3442]">
+          <button onClick={handleContactClick} className="select-none border-none outline-none text-white uppercase font-bold text-xs py-3 px-6 bg-[rgb(33_150_243)] rounded-lg w-[90%] [text-shadow:0px_4px_18px_#2c3442] cursor-pointer hover:opacity-90 transition-opacity">
           <p className="text-center">Contact Us Now!</p>
         </button>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { FaChevronUp } from 'react-icons/fa6';
 import {motion} from "framer-motion";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const NavbarMenu = [
   {
@@ -12,31 +13,37 @@ const NavbarMenu = [
   {
     id: 2,
     title: "Services",
-    path: "/",
+    path: "/services",
   },
   {
     id: 3,
     title: "About Us",
-    path: "#",
+    path: "/about",
   },
   {
     id: 4,
     title: "Our Team",
-    path: "#",
+    path: "/team",
   },
   {
     id: 5,
     title: "Contact Us",
-    path: "#",
+    path: "/contact",
   },
 
 ];
 
 const Navbar = () => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
+const location = useLocation();
+const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleGetQuote = () => {
+    navigate('/contact');
   };
 
   return (
@@ -49,7 +56,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         items-center fixed z-50 bg-light
          bg-opacity-50 backdrop-blur-md w-screen overflow-x-hidden'>
       {/*Logo section*/}
-      <div className='flex flex-row space-evenly my-auto -mx-0 sm:scale-100 w-100vw'>
+      <div className='flex flex-row items-center gap-3 my-auto'>
         <div className='w-8 h-8 rounded-full bg-secondary'>
           <div>
             <div className='flex flex-col items-center justify-center m-auto pt-2'>
@@ -57,21 +64,21 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             </div>
           </div>
         </div>
-        <h1 className='font-bold my-auto text-md md:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
+        <h1 className='font-bold my-auto text-lg md:text-2xl whitespace-nowrap'>Arrow Smart Solutions</h1>
       </div>
       {/*Menu section*/}
       <div className='hidden lg:block'>
         <ul className='flex items-center gap-3'>
           {NavbarMenu.map((menu) => (
               <li key={menu.id}>
-                <a href={menu.path} className='inline-block py-2 px-3 hover:text-secondary relative group'>
+                <Link to={menu.path} className={`inline-block py-2 px-3 hover:text-secondary relative group text-lg ${location.pathname === menu.path ? 'text-secondary' : ''}`}>
                   <div className='w-2 h-2 bg-secondary absolute mt-2 rounded-full
                   left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden'></div>
                   {menu.title}
-                  </a>
+                  </Link>
               </li>
             ))}
-            <button aria-label="Get Quote" className='primary-btn'>Get Quote</button>
+            <button aria-label="Get Quote" onClick={handleGetQuote} className='primary-btn'>Get Quote</button>
 
         </ul>
       </div>
@@ -89,16 +96,16 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
           <ul className=' top-6 flex flex-col items-center justify-center h-full gap-6'>
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
-                <a
-                  href={menu.path}
-                  className='text-xl font-medium hover:text-secondary'
+                <Link
+                  to={menu.path}
+                  className={`text-2xl font-medium hover:text-secondary ${location.pathname === menu.path ? 'text-secondary' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {menu.title}
-                </a>
+                </Link>
               </li>
             ))}
-            <button className='primary-btn' onClick={() => setIsMenuOpen(false)}>Get Quote</button>
+            <button className='primary-btn' onClick={() => { handleGetQuote(); setIsMenuOpen(false); }}>Get Quote</button>
           </ul>
         </div>
       )}

@@ -1,24 +1,35 @@
 import React from 'react';
-import Hero from './components/Hero/Hero';
-import Services from './components/Services/Services';
-import Banner from './components/Banner/Banner';
-import Footer from './components/Footer/Footer';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Contact from './components/Contact/Contact';
-import Promotion from './components/Promotion/Promotion';
+import Footer from './components/Footer/Footer';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
+import TeamPage from './pages/TeamPage';
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import PackageDetail from './pages/PackageDetail';
+import SupportDetail from './pages/SupportDetail';
 
 const App = () => {
   return (
-    <main className="overflow-x-hidden bg-white text-dark">
+    <div className="overflow-x-hidden bg-white text-dark">
       <Navbar />
-      <Hero />
-      <Services />
-      <Banner />
-      <Promotion />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/package/:packageId" element={<PackageDetail />} />
+        <Route path="/support-plan/:planId" element={<SupportDetail />} />
+      </Routes>
       <Footer />
-    </main>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;

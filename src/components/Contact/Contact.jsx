@@ -61,7 +61,7 @@ const Form = () => {
     
         
     <button aria-label="Submit Cotact Form" type='submit' class="submit">Submit</button>
-    <p class="signin">By clicking on submit indicates that you agree with Arrow Smart Solutions' <a href="#">Terms and Conditions</a> of service. </p>
+    <p class="signin">By clicking on submit indicates that you agree with Arrow Smart Solutions' <a href="/terms-conditions">Terms and Conditions</a> of service. </p>
 </form>
     </StyledWrapper>
   );
@@ -81,7 +81,7 @@ const StyledWrapper = styled.div`
   }
 
   .title {
-    font-size: 28px;
+    font-size: 36px;
     color: #333333;
     font-weight: 600;
     letter-spacing: -1px;
@@ -115,7 +115,7 @@ const StyledWrapper = styled.div`
 
   .message, .signin {
     color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .signin {
@@ -155,14 +155,14 @@ const StyledWrapper = styled.div`
     left: 10px;
     top: 15px;
     color: grey;
-    font-size: 0.9em;
+    font-size: 1em;
     cursor: text;
     transition: 0.3s ease;
   }
 
   .form label .input:placeholder-shown + span {
     top: 15px;
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .form label .input:focus + span,.form label .input:valid + span {
@@ -182,7 +182,7 @@ const StyledWrapper = styled.div`
     padding: 10px;
     border-radius: 10px;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     transform: .3s ease;
   }
 

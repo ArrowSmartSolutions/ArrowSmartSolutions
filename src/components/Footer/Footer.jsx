@@ -3,6 +3,7 @@ import { FaChevronUp } from 'react-icons/fa6';
 import {FaInstagram, FaWhatsapp, FaTwitter} from 'react-icons/fa';
 import { TbWorldWww } from 'react-icons/tb';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -15,17 +16,13 @@ const Footer = () => {
                 {/*first section*/}
                 <div className='space-y-4 max-w-[300px]'>
                     {/*Logo section*/}
-                    <div className='flex flex-row m-auto'>
-                        <div className='w-8 h-8 rounded-full bg-secondary'>
-                        <div>
-                            <div className='flex items-center justify-center m-auto pt-2'>
-                            <FaChevronUp className=' text-white flex items-center justify-center m-auto dark2 my-auto -mx-0'/>
-                            </div>
+                    <div className='flex flex-row items-center gap-3 my-auto'>
+                        <div className='w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0'>
+                            <FaChevronUp className='text-white text-sm'/>
                         </div>
-                        </div>
-                        <h1 className='font-bold text-2xl md:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
+                        <h1 className='font-bold my-auto text-lg md:text-2xl whitespace-nowrap'>Arrow Smart Solutions</h1>
                     </div>
-                    <p className='text-dark2'>
+                    <p className='text-dark2 text-lg'>
                     Arrow Smart Solutions offers reliable,
                     affordable IT support tailored to small businesses and individuals.
                     From resolving technical issues to designing professional websites,
@@ -36,51 +33,48 @@ const Footer = () => {
                 {/*second section*/}
                 <div className='grid grid-cols-2 gap-10'>
                     <div className='space-y-4'>
-                        <h1 className='text-2xl font-bold'>Services</h1>
+                        <h1 className='text-3xl font-bold'>Services</h1>
                         <div className='text-dark2'>
-                            <ul className='space-y-2 text-lg'>
+                            <ul className='space-y-2 text-xl'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Web Development & Third-Party Hosting
+                                <Link to="/services">Web Development & Third-Party Hosting</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Network Support
+                                <Link to="/services">Network Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Operating System Support
+                                <Link to="/services">Operating System Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Third-party Software Support
+                                <Link to="/services">Third-party Software Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Data Backup and Recovery
+                                <Link to="/services">Data Backup and Recovery</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Remote IT Support
+                                <Link to="/services">Remote IT Support</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className='space-y-4'>
-                        <h1 className='text-2xl font-bold'>Navigation</h1>
+                        <h1 className='text-3xl font-bold'>Navigation</h1>
                         <div className='text-dark2'>
-                            <ul className='space-y-2 text-lg'>
+                            <ul className='space-y-2 text-xl'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Home
+                                <Link to="/">Home</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Services
+                                <Link to="/services">Services</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                About Us
+                                <Link to="/about">About Us</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Our Team
+                                <Link to="/team">Our Team</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Contact Us
-                                </li>
-                                <li className='cursor-pointer hover:text-secondary duration-200'>
-                                Careers
+                                <Link to="/contact">Contact Us</Link>
                                 </li>
                             </ul>
                         </div>
@@ -88,7 +82,7 @@ const Footer = () => {
                 </div>
                 {/*third section*/}
                 <div className='space-y-4 max-w-[300px]'>
-                    <h1 className='text-2xl font-bold'>Newsletter</h1>
+                    <h1 className='text-3xl font-bold'>Newsletter</h1>
                     <div className='flex items-center'>
                         <input 
                         type="email"
@@ -123,6 +117,16 @@ const Footer = () => {
                 </div>
             </div>
         </motion.div>
+                <div className='mt-10 border-t pt-6 text-center text-lg text-dark2'>
+                    <div className='max-w-[900px] mx-auto'>
+                        <p className='text-base'>Please note: All pricing is indicative and may vary based on specific project requirements, scope changes, and additional features. Detailed quotes are provided after an initial consultation and thorough requirement analysis. Prices are subject to change. Excludes VAT.</p>
+                        <div className='mt-6 flex justify-center gap-6 flex-wrap text-base'>
+                            <Link to="/privacy-policy" className='hover:text-secondary duration-200'>Privacy Policy</Link>
+                            <Link to="/terms-conditions" className='hover:text-secondary duration-200'>Terms & Conditions</Link>
+                        </div>
+                        <p className='mt-6 text-base'>© 2026 Arrow Smart Solutions. All rights reserved.</p>
+                    </div>
+                </div>
     </footer>
   )
 }

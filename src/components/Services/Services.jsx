@@ -1,123 +1,118 @@
-import { div } from 'framer-motion/client';
-import React from 'react';
-import { IoAnalytics, IoPulseOutline } from 'react-icons/io5';
-import { RiComputerLine } from 'react-icons/ri';
-import { SiWindowsxp } from 'react-icons/si';
-import { TbWorldWww } from 'react-icons/tb';
-import { TiCloudStorage } from 'react-icons/ti';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MdDesignServices, MdDomain } from 'react-icons/md';
-import { GrDomain } from 'react-icons/gr';
+import { FiCheckCircle } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
-const ServicesData = [
-    {
-        id:1,
-        title:"Web Development",
-        link:"#",
-        icon:<TbWorldWww/>,
-        delay: 0.2,
-    },
-    {
-        id:2,
-        title:"Software Installation & Updates",
-        link:"#",
-        icon:<RiComputerLine />,
-        delay: 0.3,
-    },
-    {
-        id:3,
-        title:"Windows Activation",
-        link:"#",
-        icon:<SiWindowsxp />,
-        delay: 0.4,
-    },
-    {
-        id:4,
-        title:"Data Backup & Recovery",
-        link:"#",
-        icon:<TiCloudStorage />,
-        delay: 0.5,
-    },
-    {
-      id:5,
-      title:"SEO Optimization",
-      link:"#",
-      icon:<IoPulseOutline />,
-      delay: 0.6,
+const packages = [
+  {
+    id: 'starter',
+    title: 'Starter Package',
+    price: 'From R4,999 – R8,000',
+    details: [
+      'Responsive Web Design',
+      'Basic SEO Setup',
+      'Content Management System (CMS)',
+      'Up to 5 Pages',
+      'Standard Contact Form',
+    ],
+    cta: 'Get Started',
   },
   {
-      id:2,
-      title:"UI/UX Design",
-      link:"#",
-      icon:<MdDesignServices />,
-      delay: 0.7,
+    id: 'business',
+    title: 'Business Package',
+    price: 'From R12,000 – R25,000',
+    details: [
+      'Everything in Starter',
+      'Custom Feature Development',
+      'E-commerce Integration (Basic)',
+      'Advanced Analytics',
+      'Up to 15 Pages',
+    ],
+    cta: 'Grow Your Business',
   },
-    {
-        id:2,
-        title:"Analytics & Reporting",
-        link:"#",
-        icon:<IoAnalytics />,
-        delay: 0.8,
-    },
-    {
-        id:2,
-        title:"Third Party Domain & Hosting",
-        link:"#",
-        icon:<GrDomain />,
-        delay: 0.3,
-    },
+  {
+    id: 'professional',
+    title: 'Professional Package',
+    price: 'From R30,000 – R60,000+',
+    details: [
+      'Everything in Business',
+      'Enterprise-grade Security',
+      'API Development & Integration',
+      'Custom Web Applications',
+      'Dedicated Account Manager',
+    ],
+    cta: 'Elevate Your Enterprise',
+  },
 ];
 
-const SlideLeft = (delay) => {
-  return {
-    initial: {
-      opacity: 0,
-      x: 50
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        delay: delay,
-        ease:"easeInOut",
-      },
-    },
-  };
-};
+const Card = ({ pkg, isHovered, isSelected, onHover, onHoverEnd, onSelect, onNavigate }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
+    whileHover={{ scale: 1.05 }}
+    onMouseEnter={onHover}
+    onMouseLeave={onHoverEnd}
+    onClick={onSelect}
+    className={`p-6 rounded-2xl bg-white shadow-sm border transition-all duration-300 cursor-pointer ${
+      isSelected || isHovered ? 'border-primary shadow-2xl' : 'border-[#eee]'
+    }`}
+  >
+    <div className='text-lg font-medium text-dark2'>{pkg.title}</div>
+    <div className='mt-4 text-3xl font-bold'>{pkg.price}</div>
+    <ul className='mt-4 space-y-2 text-lg text-dark2'>
+      {pkg.details.map((d) => (
+        <li key={d} className='flex items-start gap-2'>
+          <FiCheckCircle className='text-primary mt-1' />
+          <span>{d}</span>
+        </li>
+      ))}
+    </ul>
+    <button 
+      onClick={(e) => {
+        e.stopPropagation();
+        onNavigate(pkg.id);
+      }}
+      className={`mt-6 w-full py-3 rounded-lg transition-colors duration-300 ${isSelected || isHovered ? 'bg-primary text-white' : 'bg-[#f4f4f4]'}`}
+    >
+      {pkg.cta}
+    </button>
+  </motion.div>
+);
 
 const Services = () => {
+  const [hoveredPackage, setHoveredPackage] = useState(null);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  const navigate = useNavigate();
+
+  const handleNavigate = (packageId) => {
+    navigate(`/package/${packageId}`);
+  };
+
   return (
     <section className='bg-white'>
-      <div className='container pb-14 pt-16' >
-        <h1 className='text-4xl font-bold text-left pb-10'>
-            Services Offered
+      <div className='container pb-14 pt-16'>
+        <h1 className='text-5xl font-bold text-center pb-10'>
+          Our Flexible Development Packages
         </h1>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8' >
-            {
-              ServicesData.map((service) => (
-                <motion.div
-                variants={SlideLeft(service.delay)}
-                initial='initial'
-                whileInView={'animate'}
-                viewport={{once:true}}
-                
-                className='bg-[#f4f4f4] rounded-2xl flex flex-col gap-4 items-center justify-center
-                  p-4 py-7 hover:bg-white hover:scale-110 duration-300 hover:shadow-2xl'>
-                  <div className='text-4xl mb-4'>
-                    {service.icon}
-                  </div>
-                  <h1 className='text-lg font-semibold text-center px-3'>
-                    {service.title}
-                  </h1> 
-                </motion.div>
-              ))
-            }
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+          {packages.map((p) => (
+            <Card 
+              pkg={p} 
+              key={p.id}
+              isHovered={hoveredPackage === p.id}
+              isSelected={selectedPackage === p.id}
+              onHover={() => setHoveredPackage(p.id)}
+              onHoverEnd={() => setHoveredPackage(null)}
+              onSelect={() => setSelectedPackage(p.id)}
+              onNavigate={handleNavigate}
+            />
+          ))}
         </div>
-        
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
