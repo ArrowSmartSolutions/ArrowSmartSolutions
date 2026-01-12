@@ -4,7 +4,7 @@ import Banner from '../components/Banner/Banner';
 
 const AboutPage = () => {
   return (
-    <main className="overflow-x-hidden bg-white text-dark pt-32">
+    <main className="overflow-x-hidden bg-white text-dark pt-20 sm:pt-24 md:pt-28 lg:pt-32">
       <WhyPartner />
       <Banner />
     </main>

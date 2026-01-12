@@ -85,9 +85,9 @@ const Support = () => {
 
   return (
     <section className='bg-light'>
-      <div className='container py-16'>
-        <h2 className='text-5xl font-bold text-center pb-8'>Ongoing Support & Maintenance Plans</h2>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-12'>
+      <div className='container py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24'>
+        <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-tight'>Ongoing Support & Maintenance Plans</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 mb-8 sm:mb-10 md:mb-12 lg:mb-16'>
           {plans.map((p) => (
             <PlanCard 
               plan={p} 
@@ -102,10 +102,10 @@ const Support = () => {
           ))}
         </div>
 
-        <div className='text-center py-12'>
-          <h3 className='text-4xl font-bold mb-3'>Need a Bespoke Solution?</h3>
-          <p className='text-lg text-dark2 max-w-[800px] mx-auto mb-6'>For complex projects or unique business requirements, we're ready to craft a tailor-made proposal just for you. Reach out today for a personalized consultation.</p>
-          <button className='primary-btn'>Contact Us for a Quote</button>
+        <div className='text-center py-8 sm:py-10 md:py-12 lg:py-16'>
+          <h3 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 leading-tight'>Need a Bespoke Solution?</h3>
+          <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-[800px] mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed'>For complex projects or unique business requirements, we're ready to craft a tailor-made proposal just for you. Reach out today for a personalized consultation.</p>
+          <button className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'>Contact Us for a Quote</button>
         </div>
       </div>
     </section>

@@ -33,14 +33,14 @@ const Hero = () => {
 
   return (
     <section className='bg-light overflow-hidden' >
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[450px] mt-28" relative>
+      <div className="container flex flex-col-reverse md:flex-row items-center gap-6 md:gap-8 lg:gap-10 min-h-[450px] md:min-h-[500px] mt-20 sm:mt-24 md:mt-28 lg:mt-32">
         {/*Brand Info*/}
-        <div className='text-center md:text-left space-y-10 lg:max-w-[600px]'>
+        <div className='text-center md:text-left space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 lg:max-w-[600px]'>
             <motion.h1
             variants={FadeUp(0.6)}            
             initial = "initial"
             animate = "animate"
-            className='text-4xl lg:text-6xl font-bold !leading-snug'>
+            className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold !leading-snug'>
               Unlock Your Digital Potential with
               <span className='text-secondary'> Arrow Smart Solutions</span>
             </motion.h1>
@@ -48,7 +48,7 @@ const Hero = () => {
               variants={FadeUp(0.8)}
               initial="initial"
               animate="animate"
-              className="text-lg text-dark2 mt-4 max-w-[600px]"
+              className="text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-[600px] leading-relaxed"
             >
               At Arrow Smart Solutions, based in the heart of South Africa, we craft exceptional web
               experiences and robust digital platforms tailored for your success. Whether you're a startup or
@@ -58,23 +58,23 @@ const Hero = () => {
             variants={FadeUp(0.8)}
             initial="initial"
             animate="animate"
-             className='flex justify-center md:justify-start'>
-                <button onClick={handleViewPackages} className="primary-btn flex items-center gap-2">
+             className='flex justify-center md:justify-start p-2 sm:p-3 md:p-4'>
+                <button onClick={handleViewPackages} className="primary-btn flex items-center gap-2 text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8">
                     View Our Packages
-                    <IoIosArrowRoundForward className='text-xl group-hover:translate-x-2
+                    <IoIosArrowRoundForward className='text-sm sm:text-base md:text-lg lg:text-xl group-hover:translate-x-2
                     group-hover:-rotate-45 duration-300' />
                 </button>
             </motion.div>
         </div>
         {/*Hero Image*/}
-        <div className='flex flex-col justify-start py-10 md:py-0 relative'>
+        <div className='flex flex-col justify-start py-6 sm:py-8 md:py-0 relative w-full md:w-auto'>
           <motion.img
           initial={{x:50, opacity:0}}
           animate={{x:0, opacity:1}}
           transition={{duration:0.6, delay: 0.4, ease:easeInOut}}
            src={hero}
           alt="image of developers and IT support technicians"
-           className='rounded-xl w-[400px] xl:w-[600px] relative z-10 drop-shadow' 
+           className='rounded-lg sm:rounded-xl w-full sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[600px] relative z-10 drop-shadow' 
           />
         </div>
       </div>

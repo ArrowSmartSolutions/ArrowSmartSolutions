@@ -92,11 +92,11 @@ const Services = () => {
 
   return (
     <section className='bg-white'>
-      <div className='container pb-14 pt-16'>
-        <h1 className='text-5xl font-bold text-center pb-10'>
+      <div className='container pb-8 sm:pb-10 md:pb-12 lg:pb-14 pt-8 sm:pt-12 md:pt-16 lg:pt-20'>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center pb-8 sm:pb-10 md:pb-12 lg:pb-14 leading-tight'>
           Our Flexible Development Packages
         </h1>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8'>
           {packages.map((p) => (
             <Card 
               pkg={p} 
