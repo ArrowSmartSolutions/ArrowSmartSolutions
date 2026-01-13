@@ -154,7 +154,7 @@ const PackageDetail = () => {
             transition={{ duration: 0.5 }}
             className='mb-16'
           >
-            <h2 className='text-4xl font-bold mb-8 text-center'>Who Should Choose This?</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center'>Who Should Choose This?</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
               {details.useCases.map((useCase, idx) => (
                 <motion.div
@@ -165,8 +165,8 @@ const PackageDetail = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className='p-6 bg-light rounded-2xl border border-primary'
                 >
-                  <h3 className='text-2xl font-bold mb-3 text-primary'>{useCase.title}</h3>
-                  <p className='text-lg text-dark2'>{useCase.description}</p>
+                  <h3 className='text-lg sm:text-xl md:text-2xl font-bold mb-3 text-primary'>{useCase.title}</h3>
+                  <p className='text-sm sm:text-base md:text-lg text-dark2'>{useCase.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -179,7 +179,7 @@ const PackageDetail = () => {
             transition={{ duration: 0.5 }}
             className='mb-16'
           >
-            <h2 className='text-4xl font-bold mb-8 text-center'>Package Features</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center'>Package Features</h2>
             <div className='bg-light p-8 rounded-2xl'>
               <ul className='space-y-4'>
                 {details.features.map((feature, idx) => (
@@ -189,7 +189,7 @@ const PackageDetail = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className='flex items-start gap-4 text-lg'
+                    className='flex items-start gap-4 text-sm sm:text-base md:text-lg'
                   >
                     <span className='text-primary font-bold mt-1'>✓</span>
                     <span className='text-dark2'>{feature}</span>
@@ -207,12 +207,12 @@ const PackageDetail = () => {
             className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-16'
           >
             <div className='p-6 border-l-4 border-primary'>
-              <h3 className='text-2xl font-bold mb-2'>Timeline</h3>
-              <p className='text-xl text-dark2'>{details.timeline}</p>
+              <h3 className='text-lg sm:text-xl md:text-2xl font-bold mb-2'>Timeline</h3>
+              <p className='text-sm sm:text-base md:text-lg text-dark2'>{details.timeline}</p>
             </div>
             <div className='p-6 border-l-4 border-secondary'>
-              <h3 className='text-2xl font-bold mb-2'>Support</h3>
-              <p className='text-xl text-dark2'>{details.support}</p>
+              <h3 className='text-lg sm:text-xl md:text-2xl font-bold mb-2'>Support</h3>
+              <p className='text-sm sm:text-base md:text-lg text-dark2'>{details.support}</p>
             </div>
           </motion.div>
 
@@ -223,8 +223,8 @@ const PackageDetail = () => {
             transition={{ duration: 0.5 }}
             className='text-center'
           >
-            <h2 className='text-3xl font-bold mb-6'>Ready to Get Started?</h2>
-            <p className='text-xl text-dark2 mb-8'>Contact us today to discuss how we can bring your vision to life.</p>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6'>Ready to Get Started?</h2>
+            <p className='text-sm sm:text-base md:text-lg text-dark2 mb-8'>Contact us today to discuss how we can bring your vision to life.</p>
             <button className='primary-btn'>Contact Us Now</button>
           </motion.div>
 
@@ -235,7 +235,7 @@ const PackageDetail = () => {
             transition={{ duration: 0.5 }}
             className='mt-16 pt-16 border-t border-[#eee]'
           >
-            <h2 className='text-3xl font-bold text-center mb-10'>Explore Other Packages</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10'>Explore Other Packages</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto'>
               {otherPackages.map((pkg, idx) => {
                 const packageNames = {
@@ -260,8 +260,8 @@ const PackageDetail = () => {
                     onClick={() => navigate(`/package/${pkg}`)}
                     className='p-6 bg-light border border-primary rounded-2xl text-left hover:shadow-lg transition-all duration-300'
                   >
-                    <h3 className='text-2xl font-bold text-primary mb-2'>{packageNames[pkg]}</h3>
-                    <p className='text-lg font-semibold text-dark2 mb-4'>{packagePrices[pkg]}</p>
+                    <h3 className='text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2'>{packageNames[pkg]}</h3>
+                    <p className='text-sm sm:text-base md:text-lg font-semibold text-dark2 mb-4'>{packagePrices[pkg]}</p>
                     <span className='inline-block text-primary font-semibold hover:text-secondary transition-colors'>
                       Learn More →
                     </span>
