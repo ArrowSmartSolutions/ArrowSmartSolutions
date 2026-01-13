@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronUp } from 'react-icons/fa6';
 import {FaInstagram, FaWhatsapp, FaTwitter} from 'react-icons/fa';
 import { TbWorldWww } from 'react-icons/tb';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show button after scrolling 300px and when scrolling down
+      if (currentScrollY > 300 && currentScrollY > lastScrollY) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <footer className='relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-28 bg-[#f7f7f7]'>
+    <footer className='py-8 sm:py-12 md:py-16 lg:py-20 xl:py-28 bg-[#f7f7f7]'>
         <motion.div
         initial={{opacity: 0, y:50}}
         whileInView={{opacity:1, y:0}}
@@ -131,19 +152,26 @@ const Footer = () => {
                         <p className='text-xs sm:text-sm md:text-base font-medium'>© 2026 Arrow Smart Solutions. All rights reserved.</p>
                     </div>
                 </div>
-                <motion.button
-                  aria-label="Scroll to top"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className='absolute right-6 bottom-6 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-white shadow-xl hover:shadow-2xl transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary/30'
-                >
-                  <FaChevronUp className='text-sm sm:text-base' />
-                </motion.button>
+        <AnimatePresence>
+          {showBackToTop && (
+            <motion.button
+              key="footer-back-to-top"
+              aria-label="Scroll to top"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 20 }}
+              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className='fixed bottom-6 right-6 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-white shadow-xl hover:shadow-2xl transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary/30 z-40'
+            >
+              <FaChevronUp className='text-sm sm:text-base' />
+            </motion.button>
+          )}
+        </AnimatePresence>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
