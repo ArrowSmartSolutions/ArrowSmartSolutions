@@ -52,32 +52,44 @@ const Card = ({ pkg, isHovered, isSelected, onHover, onHoverEnd, onSelect, onNav
     viewport={{ once: true }}
     transition={{ duration: 0.4 }}
     whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
     onMouseEnter={onHover}
     onMouseLeave={onHoverEnd}
     onClick={onSelect}
-    className={`p-6 rounded-2xl bg-white shadow-sm border transition-all duration-300 cursor-pointer ${
-      isSelected || isHovered ? 'border-primary shadow-2xl' : 'border-[#eee]'
-    }`}
+    className={`p-5 md:p-6 lg:p-7 rounded-2xl border transition-all duration-300 cursor-pointer ${isSelected || isHovered ? 'bg-primary text-white border-primary shadow-2xl' : 'bg-white text-dark border-[#eee] shadow-sm'}`}
+    role="button"
+    tabIndex={0}
+    aria-pressed={isSelected}
+    aria-label={`Select ${pkg.title}`}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onSelect();
+      }
+    }}
   >
-    <div className='text-lg font-medium text-dark2'>{pkg.title}</div>
-    <div className='mt-4 text-3xl font-bold'>{pkg.price}</div>
-    <ul className='mt-4 space-y-2 text-lg text-dark2'>
+    <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.title}</div>
+    <div className={`mt-3 md:mt-4 text-2xl md:text-3xl font-bold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.price}</div>
+    <ul className='mt-4 space-y-2'>
       {pkg.details.map((d) => (
         <li key={d} className='flex items-start gap-2'>
-          <FiCheckCircle className='text-primary mt-1' />
-          <span>{d}</span>
+          <FiCheckCircle className={`mt-1 flex-shrink-0 ${isSelected || isHovered ? 'text-white' : 'text-primary'}`} />
+          <span className={`text-xs md:text-sm lg:text-base ${isSelected || isHovered ? 'text-gray-100' : 'text-dark2'}`}>{d}</span>
         </li>
       ))}
     </ul>
-    <button 
+    <motion.button 
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       onClick={(e) => {
         e.stopPropagation();
         onNavigate(pkg.id);
       }}
-      className={`mt-6 w-full py-3 rounded-lg transition-colors duration-300 ${isSelected || isHovered ? 'bg-primary text-white' : 'bg-[#f4f4f4]'}`}
+      aria-label={`Navigate to ${pkg.cta}`}
+      className={`mt-6 w-full py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${isSelected || isHovered ? 'bg-white text-primary hover:bg-gray-100' : 'bg-[#f4f4f4] text-dark hover:bg-gray-200'}`}
     >
       {pkg.cta}
-    </button>
+    </motion.button>
   </motion.div>
 );
 

@@ -47,30 +47,44 @@ const PlanCard = ({ plan, isHovered, isSelected, onHover, onHoverEnd, onSelect, 
     viewport={{ once: true }}
     transition={{ duration: 0.4 }}
     whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
     onMouseEnter={onHover}
     onMouseLeave={onHoverEnd}
     onClick={onSelect}
-    className={`p-6 rounded-2xl bg-white border transition-all duration-300 cursor-pointer ${isSelected || isHovered ? 'border-secondary shadow-2xl' : 'border-[#eee]'}`}
+    className={`p-5 md:p-6 lg:p-7 rounded-2xl border transition-all duration-300 cursor-pointer ${isSelected || isHovered ? 'bg-secondary text-white border-secondary shadow-2xl' : 'bg-white text-dark border-[#eee] shadow-sm'}`}
+    role="button"
+    tabIndex={0}
+    aria-pressed={isSelected}
+    aria-label={`Select ${plan.title}`}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onSelect();
+      }
+    }}
   >
-    <div className='text-lg font-semibold'>{plan.title}</div>
-    <div className='mt-2 text-secondary font-bold text-2xl'>{plan.price}</div>
-    <ul className='mt-4 space-y-2 text-lg text-dark2'>
+    <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{plan.title}</div>
+    <div className={`mt-2 md:mt-3 text-xl md:text-2xl lg:text-3xl font-bold ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`}>{plan.price}</div>
+    <ul className='mt-4 space-y-2'>
       {plan.bullets.map((b) => (
         <li key={b} className='flex items-start gap-2'>
-          <FiCheckCircle className={`mt-1 ${isSelected || isHovered ? 'text-secondary' : 'text-secondary'}`} />
-          <span>{b}</span>
+          <FiCheckCircle className={`mt-1 flex-shrink-0 ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`} />
+          <span className={`text-xs md:text-sm lg:text-base ${isSelected || isHovered ? 'text-gray-100' : 'text-dark2'}`}>{b}</span>
         </li>
       ))}
     </ul>
-    <button 
+    <motion.button 
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       onClick={(e) => {
         e.stopPropagation();
         onNavigate(plan.id);
       }}
-      className={`mt-6 w-full py-3 rounded-lg transition-colors duration-300 ${isSelected || isHovered ? 'bg-secondary text-white' : 'bg-[#f4f4f4]'}`}
+      aria-label={`Learn more about ${plan.title}`}
+      className={`mt-6 w-full py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${isSelected || isHovered ? 'bg-white text-secondary hover:bg-gray-100' : 'bg-[#f4f4f4] text-dark hover:bg-gray-200'}`}
     >
       Learn More
-    </button>
+    </motion.button>
   </motion.div>
 );
 
