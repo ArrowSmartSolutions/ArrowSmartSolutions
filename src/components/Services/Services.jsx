@@ -68,8 +68,10 @@ const Card = ({ pkg, isHovered, isSelected, onHover, onHoverEnd, onSelect, onNav
       }
     }}
   >
-    <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.title}</div>
-    <div className={`mt-3 md:mt-4 text-2xl md:text-3xl font-bold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.price}</div>
+    <div>
+      <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.title}</div>
+      <div className={`mt-2 text-sm font-bold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{pkg.price}</div>
+    </div>
     <ul className='mt-4 space-y-2'>
       {pkg.details.map((d) => (
         <li key={d} className='flex items-start gap-2'>

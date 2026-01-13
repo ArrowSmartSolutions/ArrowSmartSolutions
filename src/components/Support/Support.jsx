@@ -63,8 +63,10 @@ const PlanCard = ({ plan, isHovered, isSelected, onHover, onHoverEnd, onSelect, 
       }
     }}
   >
-    <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{plan.title}</div>
-    <div className={`mt-2 md:mt-3 text-xl md:text-2xl lg:text-3xl font-bold ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`}>{plan.price}</div>
+    <div>
+      <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{plan.title}</div>
+      <div className={`mt-2 text-sm font-bold ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`}>{plan.price}</div>
+    </div>
     <ul className='mt-4 space-y-2'>
       {plan.bullets.map((b) => (
         <li key={b} className='flex items-start gap-2'>

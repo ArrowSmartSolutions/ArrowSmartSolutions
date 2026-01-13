@@ -55,14 +55,27 @@ const navigate = useNavigate();
        className='py-3 sm:py-4 md:py-5 lg:py-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex justify-between items-center fixed z-50 bg-light bg-opacity-50 backdrop-blur-md w-screen overflow-x-hidden'>
       {/*Logo section*/}
       <div className='flex flex-row items-center gap-2 sm:gap-2.5 md:gap-3 lg:gap-4 my-auto'>
-        <div className='w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-secondary'>
+      <div className='w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full bg-secondary'>
           <div>
             <div className='flex flex-col items-center justify-center m-auto pt-2'>
              <FaChevronUp className='text-white flex items-center my-auto justify-center m-auto text-xs sm:text-sm md:text-base'/>
             </div>
           </div>
         </div>
-        <h1 className='font-bold my-auto text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl whitespace-nowrap'>Arrow Smart Solutions</h1>
+        <button
+          type="button"
+          aria-label="Go to home"
+          onClick={() => {
+            if (location.pathname !== '/') {
+              navigate('/');
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          className='font-bold my-auto text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl whitespace-nowrap'
+        >
+          Arrow Smart Solutions
+        </button>
       </div>
       {/*Menu section*/}
       <div className='hidden lg:block'>
