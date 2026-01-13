@@ -132,9 +132,11 @@ const SupportDetail = () => {
           className='max-w-4xl mx-auto'
         >
           <div className='text-center mb-16'>
-            <h1 className='text-5xl font-bold mb-4'>{details.title}</h1>
-            <p className='text-3xl text-secondary font-bold mb-4'>{details.price}</p>
-            <p className='text-2xl text-dark2'>{details.description}</p>
+            <div>
+              <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>{details.title}</h1>
+              <p className='mt-2 text-sm font-bold text-secondary'>{details.price}</p>
+            </div>
+            <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 mt-4'>{details.description}</p>
           </div>
 
           <motion.div
