@@ -119,7 +119,15 @@ const Support = () => {
         <div className='text-center py-8 sm:py-10 md:py-12 lg:py-16'>
           <h3 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 leading-tight'>Need a Bespoke Solution?</h3>
           <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-[800px] mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed'>For complex projects or unique business requirements, we're ready to craft a tailor-made proposal just for you. Reach out today for a personalized consultation.</p>
-          <button className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'>Contact Us for a Quote</button>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/contact')}
+            aria-label="Contact us for a custom support quote"
+            className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'
+          >
+            Contact Us for a Quote
+          </motion.button>
         </div>
       </div>
     </section>
