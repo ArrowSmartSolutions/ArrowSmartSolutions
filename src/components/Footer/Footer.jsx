@@ -38,9 +38,16 @@ const Footer = () => {
                 <div className='space-y-4 md:space-y-6'>
                     {/*Logo section*/}
                     <div className='flex flex-row items-center gap-2 sm:gap-3 my-auto'>
-                        <div className='w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0'>
-                            <FaChevronUp className='text-white text-xs sm:text-sm'/>
-                        </div>
+                        <svg
+                          viewBox='0 0 100 100'
+                          aria-hidden='true'
+                          className='w-7 h-7 sm:w-8 sm:h-8 text-secondary flex-shrink-0'
+                        >
+                          <circle cx='50' cy='50' r='47' fill='none' stroke='currentColor' strokeWidth='4' />
+                          <circle cx='50' cy='50' r='42' fill='currentColor' />
+                          <path d='M30 60 L50 40 L70 60' fill='none' stroke='white' strokeWidth='8' strokeLinecap='round' strokeLinejoin='round' />
+                          <circle cx='50' cy='58' r='5' fill='white' />
+                        </svg>
                         <h1 className='font-bold my-auto text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl whitespace-nowrap'>Arrow Smart Solutions</h1>
                     </div>
                     <p className='text-dark2 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed'>
@@ -58,22 +65,22 @@ const Footer = () => {
                         <div className='text-dark2'>
                             <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Web Development & Third-Party Hosting</Link>
+                                <Link to="/package/starter">Starter Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Network Support</Link>
+                                <Link to="/package/business">Business Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Operating System Support</Link>
+                                <Link to="/package/professional">Professional Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Third-party Software Support</Link>
+                                <Link to="/support-plan/basic">Basic Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Data Backup and Recovery</Link>
+                                <Link to="/support-plan/standard">Standard Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Remote IT Support</Link>
+                                <Link to="/support-plan/priority">Priority Support</Link>
                                 </li>
                             </ul>
                         </div>
@@ -104,23 +111,16 @@ const Footer = () => {
                 {/*third section*/}
                 <div className='space-y-3 md:space-y-4'>
                     <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>Newsletter</h1>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-2'>
-                        <input 
-                        type="email"
-                        placeholder='Enter email address'
-                        className='p-2 sm:p-3 rounded-lg sm:rounded-s-lg sm:rounded-e-none bg-white
-                        w-full py-3 sm:py-4 focus:ring-0
-                            focus:outline-none placeholder:text-dark2 text-xs sm:text-sm md:text-base'
-                        aria-label="Email address for newsletter subscription"
-                        />
-                        <button
-                        aria-label="Subscribe to newsletter button"
-                        className='bg-primary text-white
-                        font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-s-none sm:rounded-e-lg hover:bg-opacity-90 transition-all duration-200 text-xs sm:text-sm md:text-base whitespace-nowrap'
-                        >
-                            Subscribe
-                        </button>
-                    </div>
+                    <p className='text-xs sm:text-sm text-dark2 leading-relaxed mb-4'>
+                        Stay updated with the latest IT support tips and business insights delivered to your inbox.
+                    </p>
+                    <Link
+                        to="/newsletter"
+                        className='inline-block bg-primary text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-opacity-90 transition-all duration-200 text-xs sm:text-sm md:text-base whitespace-nowrap'
+                        aria-label="Subscribe to newsletter"
+                    >
+                        Subscribe to Newsletter
+                    </Link>
                     <p className='text-xs sm:text-sm text-dark2 leading-relaxed'>
                         By subscribing, you agree to our <Link to="/terms-conditions" className='text-primary hover:text-secondary font-semibold'>Terms and Conditions</Link> of use.
                     </p>

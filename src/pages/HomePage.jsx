@@ -5,20 +5,20 @@ import Banner from '../components/Banner/Banner';
 import Support from '../components/Support/Support';
 import WhyPartner from '../components/WhyPartner/WhyPartner';
 import FindFit from '../components/FindFit/FindFit';
-import Contact from '../components/Contact/Contact';
 import Promotion from '../components/Promotion/Promotion';
+import HomeAccordions from '../components/HomeAccordions/HomeAccordions';
 
 const HomePage = () => {
   return (
     <main className="overflow-x-hidden bg-white text-dark">
       <Hero />
       <Services />
-      <Banner />
       <Promotion />
       <Support />
+      <Banner />
       <WhyPartner />
       <FindFit />
-      <Contact />
+      <HomeAccordions />
     </main>
   );
 };

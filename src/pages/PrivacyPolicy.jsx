@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PolicyAccordion from '../components/PolicyAccordion/PolicyAccordion';
 
 const PrivacyPolicy = () => {
   const sections = [
@@ -552,6 +553,10 @@ Version: 1.0`
                 </p>
               </motion.div>
             ))}
+          </div>
+
+          <div className='mt-12'>
+            <PolicyAccordion />
           </div>
 
           <motion.div

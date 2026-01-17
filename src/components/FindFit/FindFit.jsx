@@ -72,7 +72,7 @@ const FindFit = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ scale: 1.05 }}
               onClick={() => handleCardClick(option.id)}
-              className={`p-6 rounded-2xl border transition-all duration-300 cursor-pointer ${
+              className={`p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col h-full ${
                 selectedFit === option.id
                   ? 'bg-primary text-white border-primary shadow-2xl'
                   : 'bg-white text-dark border-[#eee] hover:shadow-lg'
@@ -95,7 +95,7 @@ const FindFit = () => {
                 {option.description}
               </p>
 
-              <div className='space-y-2 mb-6 text-left'>
+              <div className='space-y-2 flex-grow text-left'>
                 {option.features.map((feature, idx) => (
                   <motion.div
                     key={feature}

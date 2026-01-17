@@ -1,13 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useForm, ValidationError } from '@formspree/react';
 
 const Form = () => {
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [enquiry, setEnquiry] = useState("");
+  const maxEnquiryChars = 500;
+
+  const countNonSpaceChars = (value) => value.replace(/\s/g, "").length;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("Sending....");
+
+    const formData = new FormData(event.target);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+
+    try {
+      const response = await fetch(import.meta.env.VITE_WEB3FORMS_API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+        setTimeout(() => setResult(""), 5000);
+      } else {
+        setResult(data.message || "Error submitting form");
+      }
+    } catch (error) {
+      setResult("Error: Unable to submit form");
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <StyledWrapper>
       <form 
-      action='https://formspree.io/f/xbllbebq'
-      method='POST'
+      onSubmit={handleSubmit}
       className="form">
     <p className="title centertxt">
       Contact Us
@@ -49,19 +85,33 @@ const Form = () => {
     </label> 
     
     <label>
-        <input
+        <textarea
         name='enquiry' 
         required
         placeholder="" 
-        type="text" 
         autoComplete='off'
-        className="input" />
-        <span>Type Enquiry Here</span>
+        rows={4}
+        value={enquiry}
+        onChange={(event) => {
+          const nextValue = event.target.value;
+          if (countNonSpaceChars(nextValue) > maxEnquiryChars) return;
+          setEnquiry(nextValue);
+        }}
+        className="input input--textarea" />
+        <span
+          className={maxEnquiryChars - countNonSpaceChars(enquiry) <= 50 ? "counter-warning" : ""}
+        >
+          {enquiry.length > 0
+            ? `${countNonSpaceChars(enquiry)}/${maxEnquiryChars}`
+            : "Type Enquiry Here"}
+        </span>
     </label> 
     
         
-    <button aria-label="Submit Cotact Form" type='submit' className="submit">Submit</button>
-    <p className="signin">By clicking on submit indicates that you agree with Arrow Smart Solution's <a href="/terms-conditions">Terms and Conditions</a> of service. </p>
+    <button aria-label="Submit Contact Form" type='submit' className="submit" disabled={isSubmitting}>
+      {isSubmitting ? "Submitting..." : "Submit"}
+    </button>
+    <p className="signin">{result ? result : "By clicking on submit indicates that you agree with Arrow Smart Solution's"} {!result && <a href="/terms-conditions">Terms and Conditions</a>} {!result && "of service."}</p>
 </form>
     </StyledWrapper>
   );
@@ -220,6 +270,12 @@ const StyledWrapper = styled.div`
     }
   }
 
+  .form label .input.input--textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+
   .form label .input + span {
     position: absolute;
     left: 12px;
@@ -260,6 +316,16 @@ const StyledWrapper = styled.div`
     color: #ed801c;
   }
 
+  .form label .input + span.counter-warning {
+    color: #ed801c;
+  }
+
+  .form label .input--textarea:focus + span,
+  .form label .input--textarea:valid + span {
+    top: auto;
+    bottom: 12px;
+  }
+
   .submit {
     border: none;
     outline: none;
@@ -283,14 +349,19 @@ const StyledWrapper = styled.div`
       font-size: 1.25rem;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: #2d5bb5;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(30, 67, 138, 0.3);
     }
 
-    &:active {
+    &:active:not(:disabled) {
       transform: translateY(0);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 
