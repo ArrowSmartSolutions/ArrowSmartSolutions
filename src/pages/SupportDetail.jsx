@@ -1,10 +1,9 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-const SupportDetail = () => {
-  const { planId } = useParams();
+const SupportDetail = ({ planId }) => {
   const router = useRouter();
 
   const planList = ['basic', 'standard', 'priority'];

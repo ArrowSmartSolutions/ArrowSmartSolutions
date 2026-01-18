@@ -1,10 +1,9 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-const PackageDetail = () => {
-  const { packageId } = useParams();
+const PackageDetail = ({ packageId }) => {
   const router = useRouter();
 
   const packageList = ['starter', 'business', 'professional'];

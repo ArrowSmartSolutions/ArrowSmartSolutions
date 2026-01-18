@@ -1,5 +1,13 @@
 import SupportDetailClient from '../../../pages/SupportDetail'
 
+export async function generateStaticParams() {
+  return [
+    { planId: 'basic' },
+    { planId: 'standard' },
+    { planId: 'priority' },
+  ]
+}
+
 export async function generateMetadata({ params }) {
   const { planId } = params
   
@@ -69,6 +77,6 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function SupportDetailPage() {
-  return <SupportDetailClient />
+export default function SupportDetailPage({ params }) {
+  return <SupportDetailClient planId={params.planId} />
 }
