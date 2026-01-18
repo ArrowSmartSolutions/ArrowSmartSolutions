@@ -8,7 +8,7 @@ import Promotion from '../components/Promotion/Promotion'
 import HomeAccordions from '../components/HomeAccordions/HomeAccordions'
 
 export const metadata = {
-  title: 'Professional IT Services & Web Development in South Africa',
+  title: { absolute: 'Arrow Smart Solutions' },
   description: 'Arrow Smart Solutions provides affordable IT services, web development, and technical support for small businesses and individuals across South Africa. Expert help with operating systems, network security, antivirus, software installation, and data recovery. Get reliable IT support in Cape Town, Johannesburg, Pretoria, and nationwide.',
   keywords: [
     'IT services South Africa',
