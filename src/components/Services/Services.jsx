@@ -1,7 +1,8 @@
+'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const packages = [
   {
@@ -98,10 +99,10 @@ const Card = ({ pkg, isHovered, isSelected, onHover, onHoverEnd, onSelect, onNav
 const Services = () => {
   const [hoveredPackage, setHoveredPackage] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNavigate = (packageId) => {
-    navigate(`/package/${packageId}`);
+    router.push(`/package/${packageId}`);
   };
 
   return (

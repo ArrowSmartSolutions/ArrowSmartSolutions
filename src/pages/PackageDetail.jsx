@@ -1,10 +1,11 @@
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useRouter } from 'next/navigation';
 
 const PackageDetail = () => {
   const { packageId } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const packageList = ['starter', 'business', 'professional'];
   const currentIndex = packageList.indexOf(packageId);
@@ -257,7 +258,7 @@ const PackageDetail = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    onClick={() => navigate(`/package/${pkg}`)}
+                    onClick={() => router.push(`/package/${pkg}`)}
                     className='p-6 bg-light border border-primary rounded-2xl text-left hover:shadow-lg transition-all duration-300'
                   >
                     <h3 className='text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2'>{packageNames[pkg]}</h3>

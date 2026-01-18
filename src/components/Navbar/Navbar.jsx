@@ -1,7 +1,9 @@
+'use client'
 import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import {motion} from "framer-motion";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 const NavbarMenu = [
   {
@@ -44,15 +46,15 @@ const subMenu = [
 const Navbar = () => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [dropdownOpen, setDropdownOpen] = useState(false);
-const location = useLocation();
-const navigate = useNavigate();
+const pathname = usePathname();
+const router = useRouter();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleGetQuote = () => {
-    navigate('/contact');
+    router.push('/contact');
   };
 
   return (
@@ -78,8 +80,8 @@ const navigate = useNavigate();
           type="button"
           aria-label="Go to home"
           onClick={() => {
-            if (location.pathname !== '/') {
-              navigate('/');
+            if (pathname !== '/') {
+              router.push('/');
             } else {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -96,7 +98,7 @@ const navigate = useNavigate();
             if (menu.title === 'Services') {
               return (
                 <li key={menu.id} className='relative' onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-                  <Link to={menu.path} className={`inline-block py-2 px-2 sm:px-3 md:px-4 hover:text-secondary relative group text-xs sm:text-sm md:text-base lg:text-lg font-semibold ${location.pathname === menu.path ? 'text-secondary' : ''}`}>
+                  <Link href={menu.path} className={`inline-block py-2 px-2 sm:px-3 md:px-4 hover:text-secondary relative group text-xs sm:text-sm md:text-base lg:text-lg font-semibold ${pathname === menu.path ? 'text-secondary' : ''}`}>
                     <div className='w-2 h-2 bg-secondary absolute mt-2 rounded-full
                     left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden'></div>
                     {menu.title}
@@ -105,7 +107,7 @@ const navigate = useNavigate();
                     <ul className='absolute top-full left-1/2 -translate-x-1/2 mt-0.5 bg-light bg-opacity-50 backdrop-blur-md border border-white/40 shadow-lg rounded-xl py-2 min-w-[220px] z-50 before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-[""]'>
                       {subMenu.map((sub, idx) => (
                         <li key={idx}>
-                          <Link to={sub.path} className='block mx-2 px-4 py-2 text-sm font-semibold rounded-full hover:bg-secondary hover:text-white transition-colors whitespace-nowrap' onClick={() => setDropdownOpen(false)}>
+                          <Link href={sub.path} className='block mx-2 px-4 py-2 text-sm font-semibold rounded-full hover:bg-secondary hover:text-white transition-colors whitespace-nowrap' onClick={() => setDropdownOpen(false)}>
                             {sub.title}
                           </Link>
                         </li>
@@ -117,7 +119,7 @@ const navigate = useNavigate();
             } else {
               return (
                 <li key={menu.id}>
-                  <Link to={menu.path} className={`inline-block py-2 px-2 sm:px-3 md:px-4 hover:text-secondary relative group text-xs sm:text-sm md:text-base lg:text-lg font-semibold ${location.pathname === menu.path ? 'text-secondary' : ''}`}>
+                  <Link href={menu.path} className={`inline-block py-2 px-2 sm:px-3 md:px-4 hover:text-secondary relative group text-xs sm:text-sm md:text-base lg:text-lg font-semibold ${pathname === menu.path ? 'text-secondary' : ''}`}>
                     <div className='w-2 h-2 bg-secondary absolute mt-2 rounded-full
                     left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden'></div>
                     {menu.title}
@@ -149,8 +151,8 @@ const navigate = useNavigate();
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
                 <Link
-                  to={menu.path}
-                  className={`text-lg sm:text-xl md:text-2xl font-semibold hover:text-secondary ${location.pathname === menu.path ? 'text-secondary' : ''}`}
+                  href={menu.path}
+                  className={`text-lg sm:text-xl md:text-2xl font-semibold hover:text-secondary ${pathname === menu.path ? 'text-secondary' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {menu.title}

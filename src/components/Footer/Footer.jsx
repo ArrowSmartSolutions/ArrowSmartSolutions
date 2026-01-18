@@ -1,9 +1,10 @@
+'use client'
 import React, { useState, useEffect } from 'react';
 import { FaChevronUp } from 'react-icons/fa6';
 import {FaInstagram, FaWhatsapp, FaTwitter} from 'react-icons/fa';
 import { TbWorldWww } from 'react-icons/tb';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Footer = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -65,22 +66,22 @@ const Footer = () => {
                         <div className='text-dark2'>
                             <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/package/starter">Starter Package</Link>
+                                <Link href="/package/starter">Starter Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/package/business">Business Package</Link>
+                                <Link href="/package/business">Business Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/package/professional">Professional Package</Link>
+                                <Link href="/package/professional">Professional Package</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/support-plan/basic">Basic Support</Link>
+                                <Link href="/support-plan/basic">Basic Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/support-plan/standard">Standard Support</Link>
+                                <Link href="/support-plan/standard">Standard Support</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/support-plan/priority">Priority Support</Link>
+                                <Link href="/support-plan/priority">Priority Support</Link>
                                 </li>
                             </ul>
                         </div>
@@ -90,19 +91,19 @@ const Footer = () => {
                         <div className='text-dark2'>
                             <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/">Home</Link>
+                                <Link href="/">Home</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/services">Services</Link>
+                                <Link href="/services">Services</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/about">About Us</Link>
+                                <Link href="/about">About Us</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/team">Our Team</Link>
+                                <Link href="/team">Our Team</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link to="/contact">Contact Us</Link>
+                                <Link href="/contact">Contact Us</Link>
                                 </li>
                             </ul>
                         </div>
@@ -115,14 +116,14 @@ const Footer = () => {
                         Stay updated with the latest IT support tips and business insights delivered to your inbox.
                     </p>
                     <Link
-                        to="/newsletter"
+                        href="/newsletter"
                         className='inline-block bg-primary text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-opacity-90 transition-all duration-200 text-xs sm:text-sm md:text-base whitespace-nowrap'
                         aria-label="Subscribe to newsletter"
                     >
                         Subscribe to Newsletter
                     </Link>
                     <p className='text-xs sm:text-sm text-dark2 leading-relaxed'>
-                        By subscribing, you agree to our <Link to="/terms-conditions" className='text-primary hover:text-secondary font-semibold'>Terms and Conditions</Link> of use.
+                        By subscribing, you agree to our <Link href="/terms-conditions" className='text-primary hover:text-secondary font-semibold'>Terms and Conditions</Link> of use.
                     </p>
                     {/* social icons */}
                     <div className='flex justify-start items-center gap-4 sm:gap-6 py-2 md:py-3'>
@@ -146,8 +147,8 @@ const Footer = () => {
                     <div className='max-w-[900px] mx-auto space-y-4 md:space-y-6'>
                         <p className='text-xs sm:text-sm md:text-base leading-relaxed'>Please note: All pricing is indicative and may vary based on specific project requirements, scope changes, and additional features. Detailed quotes are provided after an initial consultation and thorough requirement analysis. Prices are subject to change. Excludes VAT.</p>
                         <div className='flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 flex-wrap text-xs sm:text-sm md:text-base'>
-                            <Link to="/privacy-policy" className='hover:text-secondary duration-200 font-medium'>Privacy Policy</Link>
-                            <Link to="/terms-conditions" className='hover:text-secondary duration-200 font-medium'>Terms & Conditions</Link>
+                            <Link href="/privacy-policy" className='hover:text-secondary duration-200 font-medium'>Privacy Policy</Link>
+                            <Link href="/terms-conditions" className='hover:text-secondary duration-200 font-medium'>Terms & Conditions</Link>
                         </div>
                         <p className='text-xs sm:text-sm md:text-base font-medium'>© 2026 Arrow Smart Solutions. All rights reserved.</p>
                     </div>

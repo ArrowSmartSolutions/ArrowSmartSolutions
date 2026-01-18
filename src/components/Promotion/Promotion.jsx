@@ -1,5 +1,6 @@
+'use client'
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 // Component inspired by https://uiverse.io/Yaya12085/empty-horse-27
@@ -7,10 +8,10 @@ import { motion } from 'framer-motion';
 // Modifications: Adjusted fonts and colors to match the website theme
 
 const Promotion = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleContactClick = () => {
-    navigate('/contact');
+    router.push('/contact');
   };
 
   return (

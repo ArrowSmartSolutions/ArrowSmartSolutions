@@ -1,5 +1,5 @@
+'use client'
 import React from 'react';
-import hero1 from '../../assets/hero1.png';
 import { FaShippingFast } from 'react-icons/fa';
 import { FaRecycle } from 'react-icons/fa';
 import { FaSmile } from 'react-icons/fa';
@@ -18,7 +18,7 @@ const Banner = () => {
                 whileInView={{opacity:1, x:0}}
                 viewport={{once:true}}
                 transition={{duration:0.5, ease:'easeInOut'}}
-                 src={hero1} alt="Banner Image" className='rounded-full w-[280px] sm:w-[320px] md:w-[350px] lg:w-[400px] xl:w-[450px] object-cover drop-shadow' />
+                 src="/assets/hero1.png" alt="Banner Image" className='rounded-full w-[280px] sm:w-[320px] md:w-[350px] lg:w-[400px] xl:w-[450px] object-cover drop-shadow' />
             </div>
             {/*Banner Text*/}
             <div className='flex flex-col justify-center gap-1'>

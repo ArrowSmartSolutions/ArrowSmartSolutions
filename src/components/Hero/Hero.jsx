@@ -1,8 +1,8 @@
+'use client'
 import React from 'react';
-import hero from '../../assets/hero.png';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { easeInOut, motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 export const FadeUp = (delay) => {
   return {
@@ -25,10 +25,10 @@ export const FadeUp = (delay) => {
 }
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleViewPackages = () => {
-    navigate('/services');
+    router.push('/services');
   };
 
   return (
@@ -72,7 +72,7 @@ const Hero = () => {
           initial={{x:50, opacity:0}}
           animate={{x:0, opacity:1}}
           transition={{duration:0.6, delay: 0.4, ease:easeInOut}}
-           src={hero}
+           src="/assets/hero.png"
           alt="image of developers and IT support technicians"
            className='rounded-lg sm:rounded-xl w-full sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[600px] relative z-10 drop-shadow' 
           />

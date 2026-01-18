@@ -1,10 +1,11 @@
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useRouter } from 'next/navigation';
 
 const SupportDetail = () => {
   const { planId } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const planList = ['basic', 'standard', 'priority'];
   const currentIndex = planList.indexOf(planId);
@@ -283,7 +284,7 @@ const SupportDetail = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    onClick={() => navigate(`/support-plan/${plan}`)}
+                    onClick={() => router.push(`/support-plan/${plan}`)}
                     className='p-6 bg-light border border-secondary rounded-2xl text-left hover:shadow-lg transition-all duration-300'
                   >
                     <h3 className='text-2xl font-bold text-secondary mb-2'>{planNames[plan]}</h3>

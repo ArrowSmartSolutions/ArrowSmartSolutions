@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -15,10 +16,10 @@ const Form = () => {
     setResult("Sending....");
 
     const formData = new FormData(event.target);
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
     try {
-      const response = await fetch(import.meta.env.VITE_WEB3FORMS_API_URL, {
+      const response = await fetch(process.env.NEXT_PUBLIC_WEB3FORMS_API_URL, {
         method: "POST",
         body: formData
       });

@@ -1,7 +1,8 @@
+'use client'
 import React, { useState } from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const plans = [
   {
@@ -93,10 +94,10 @@ const PlanCard = ({ plan, isHovered, isSelected, onHover, onHoverEnd, onSelect, 
 const Support = () => {
   const [hoveredPlan, setHoveredPlan] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNavigate = (planId) => {
-    navigate(`/support-plan/${planId}`);
+    router.push(`/support-plan/${planId}`);
   };
 
   return (
@@ -124,7 +125,7 @@ const Support = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/contact')}
+            onClick={() => router.push('/contact')}
             aria-label="Contact us for a custom support quote"
             className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'
           >
