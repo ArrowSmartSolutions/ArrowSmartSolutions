@@ -1,6 +1,14 @@
 export const metadata = {
-  title: 'Our Team | Arrow Smart Solutions',
-  description: 'Meet the expert team behind Arrow Smart Solutions, dedicated to providing exceptional IT services and support.',
+  title: 'Our Team | Arrow Smart Solutions - Expert IT Professionals',
+  description: 'Meet the expert IT professionals behind Arrow Smart Solutions in South Africa. Our skilled team is dedicated to providing exceptional IT services, web development, and technical support.',
+  keywords: [
+    'IT team South Africa',
+    'web developers',
+    'IT professionals',
+  ],
+  alternates: {
+    canonical: 'https://arrowsmartsolutions.com/team',
+  },
 }
 
 export default function TeamPage() {

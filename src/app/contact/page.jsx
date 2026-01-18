@@ -1,8 +1,20 @@
 import Contact from '../../components/Contact/Contact'
 
 export const metadata = {
-  title: 'Contact Us | Arrow Smart Solutions',
-  description: 'Get in touch with Arrow Smart Solutions for professional IT services and support. We respond within 24-48 hours.',
+  title: 'Contact Us for IT Services in South Africa | Arrow Smart Solutions',
+  description: 'Contact Arrow Smart Solutions for professional IT services, web development, and technical support in South Africa. Fast response within 24-48 hours. Serving businesses and individuals nationwide.',
+  keywords: [
+    'contact IT services South Africa',
+    'IT support contact',
+    'web development inquiry',
+  ],
+  openGraph: {
+    title: 'Contact Arrow Smart Solutions | IT Services South Africa',
+    description: 'Get in touch for professional IT services and web development solutions. We respond within 24-48 hours.',
+  },
+  alternates: {
+    canonical: 'https://arrowsmartsolutions.com/contact',
+  },
 }
 
 export default function ContactPage() {

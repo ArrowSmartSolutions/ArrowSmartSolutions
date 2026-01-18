@@ -1,6 +1,14 @@
 export const metadata = {
-  title: 'About Us | Arrow Smart Solutions',
-  description: 'Learn more about Arrow Smart Solutions, your trusted IT services partner in South Africa.',
+  title: 'About Us | Arrow Smart Solutions - IT Services South Africa',
+  description: 'Learn about Arrow Smart Solutions, a trusted IT services and web development company in South Africa. We provide affordable, reliable IT solutions for small businesses and individuals across the country.',
+  keywords: [
+    'about Arrow Smart Solutions',
+    'IT company South Africa',
+    'web development company',
+  ],
+  alternates: {
+    canonical: 'https://arrowsmartsolutions.com/about',
+  },
 }
 
 export default function AboutPage() {
