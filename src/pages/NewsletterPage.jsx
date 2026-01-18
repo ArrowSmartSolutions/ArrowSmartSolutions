@@ -6,10 +6,17 @@ const NewsletterPage = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
+    const mailerLiteAccountId = process.env.NEXT_PUBLIC_MAILERLITE_ACCOUNT_ID;
+    
+    if (!mailerLiteAccountId) {
+      console.error('MailerLite account ID is not configured');
+      return;
+    }
+
     // Check if MailerLite is already loaded
     if (window.ml) {
       setScriptLoaded(true);
-      window.ml('account', '2034400');
+      window.ml('account', mailerLiteAccountId);
       return;
     }
 
@@ -24,7 +31,7 @@ const NewsletterPage = () => {
 
     // Initialize MailerLite
     window.ml = window.ml || function() { (window.ml.q = window.ml.q || []).push(arguments); };
-    window.ml('account', '2034400');
+    window.ml('account', mailerLiteAccountId);
 
     return () => {
       // Cleanup if needed
@@ -35,9 +42,11 @@ const NewsletterPage = () => {
   }, []);
 
   useEffect(() => {
-    if (scriptLoaded) {
+    const mailerLiteFormId = process.env.NEXT_PUBLIC_MAILERLITE_FORM_ID;
+    
+    if (scriptLoaded && mailerLiteFormId) {
       // Ensure the form is loaded
-      window.ml('form', 't83Inr');
+      window.ml('form', mailerLiteFormId);
     }
   }, [scriptLoaded]);
 
@@ -119,7 +128,7 @@ const NewsletterPage = () => {
           Get exclusive content delivered to your inbox regularly.
         </p>
 
-        <div className="ml-embedded" data-form="t83Inr"></div>
+        <div className="ml-embedded" data-form={process.env.NEXT_PUBLIC_MAILERLITE_FORM_ID || ''}></div>
       </motion.div>
     </StyledWrapper>
   );
