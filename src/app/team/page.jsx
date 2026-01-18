@@ -5,6 +5,9 @@ export const metadata = {
     'IT team South Africa',
     'web developers',
     'IT professionals',
+    'expert web developers South Africa',
+    'software development team',
+    'business website creators',
   ],
   alternates: {
     canonical: 'https://arrowsmartsolutions.com/team',

@@ -7,6 +7,9 @@ export const metadata = {
     'IT newsletter South Africa',
     'business tech tips',
     'IT support insights',
+    'web development tips',
+    'software development news',
+    'business website updates',
   ],
   alternates: {
     canonical: 'https://arrowsmartsolutions.com/newsletter',

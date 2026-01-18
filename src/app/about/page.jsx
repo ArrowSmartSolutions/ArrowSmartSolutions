@@ -1,23 +1,35 @@
+import React from 'react';
+import WhyPartner from '../../components/WhyPartner/WhyPartner';
+import Banner from '../../components/Banner/Banner';
+
 export const metadata = {
-  title: 'About Us | Arrow Smart Solutions - IT Services South Africa',
-  description: 'Learn about Arrow Smart Solutions, a trusted IT services and web development company in South Africa. We provide affordable, reliable IT solutions for small businesses and individuals across the country.',
+  title: 'Why Partner with Us | Arrow Smart Solutions - Innovative IT Services South Africa',
+  description: 'Discover why Arrow Smart Solutions is your ideal IT partner in South Africa. We offer innovative solutions, local expertise, scalable growth, and transparent processes for businesses nationwide. Learn about our commitment to quality and reliability.',
   keywords: [
-    'about Arrow Smart Solutions',
-    'IT company South Africa',
-    'web development company',
+    'why partner with Arrow Smart Solutions',
+    'innovative IT solutions South Africa',
+    'local IT expertise',
+    'scalable IT services',
+    'transparent IT processes',
+    'affordable IT solutions South Africa',
+    'reliable IT services',
+    'web development services South Africa',
+    'custom software development',
+    'business website creation',
+    'software solutions for businesses',
+    'professional web design South Africa',
+    'IT consulting South Africa',
   ],
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/about',
+    canonical: 'https://arrowsmartsolutions.co.za/about',
   },
 }
 
 export default function AboutPage() {
   return (
     <main className="overflow-x-hidden bg-white text-dark pt-20 sm:pt-24 md:pt-28 lg:pt-32">
-      <div className="container py-16">
-        <h1 className="text-4xl font-bold mb-6">About Us</h1>
-        <p className="text-lg text-dark2">About page content coming soon...</p>
-      </div>
+      <WhyPartner />
+      <Banner />
     </main>
-  )
+  );
 }

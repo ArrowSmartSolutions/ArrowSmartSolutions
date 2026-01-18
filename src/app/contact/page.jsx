@@ -7,13 +7,16 @@ export const metadata = {
     'contact IT services South Africa',
     'IT support contact',
     'web development inquiry',
+    'custom software development contact',
+    'business website creation South Africa',
+    'IT consulting South Africa',
   ],
   openGraph: {
     title: 'Contact Arrow Smart Solutions | IT Services South Africa',
     description: 'Get in touch for professional IT services and web development solutions. We respond within 24-48 hours.',
   },
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/contact',
+    canonical: 'https://arrowsmartsolutions.co.za/contact',
   },
 }
 

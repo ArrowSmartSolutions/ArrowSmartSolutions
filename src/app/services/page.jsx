@@ -23,6 +23,9 @@ export const metadata = {
     'affordable website development',
     'e-commerce website development',
     'enterprise web development',
+    'custom software development packages',
+    'business software solutions South Africa',
+    'web application development',
   ],
   openGraph: {
     title: 'IT Services & Web Development Packages | Arrow Smart Solutions',

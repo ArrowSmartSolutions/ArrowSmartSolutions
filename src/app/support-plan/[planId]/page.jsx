@@ -25,6 +25,8 @@ export async function generateMetadata({ params }) {
         'affordable IT support',
         'small business IT maintenance',
         'website monitoring service',
+        'web development support basic',
+        'software maintenance plan',
       ],
     },
     standard: {
@@ -40,6 +42,8 @@ export async function generateMetadata({ params }) {
         'website maintenance plan',
         'business website support',
         'monthly website updates',
+        'web development support standard',
+        'software updates service',
       ],
     },
     priority: {
@@ -55,6 +59,8 @@ export async function generateMetadata({ params }) {
         'dedicated technical support',
         'high-traffic website support',
         'mission-critical website support',
+        'web development support priority',
+        'enterprise software support',
       ],
     },
   }
