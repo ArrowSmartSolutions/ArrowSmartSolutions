@@ -15,7 +15,7 @@ export const metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/privacy-policy',
+    canonical: 'https://arrowsmartsolutions.co.za/privacy-policy',
   },
 }
 

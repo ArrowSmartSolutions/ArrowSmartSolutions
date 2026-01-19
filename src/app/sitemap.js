@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://arrowsmartsolutions.com'
+  const baseUrl = 'https://arrowsmartsolutions.co.za'
   
   return [
     {

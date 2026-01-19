@@ -12,7 +12,7 @@ export const metadata = {
     'business website updates',
   ],
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/newsletter',
+    canonical: 'https://arrowsmartsolutions.co.za/newsletter',
   },
 }
 

@@ -10,7 +10,7 @@ export const metadata = {
     'business website creators',
   ],
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/team',
+    canonical: 'https://arrowsmartsolutions.co.za/team',
   },
 }
 

@@ -37,7 +37,7 @@ export const metadata = {
     images: ['/assets/hero.png'],
   },
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com',
+    canonical: 'https://arrowsmartsolutions.co.za',
   },
 }
 

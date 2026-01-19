@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import StructuredData from '../components/StructuredData/StructuredData'
 
 export const metadata = {
-  metadataBase: new URL('https://arrowsmartsolutions.com'),
+  metadataBase: new URL('https://arrowsmartsolutions.co.za'),
   title: {
     default: 'Arrow Smart Solutions | Web Development Packages & Support in South Africa',
     template: '%s | Arrow Smart Solutions',
@@ -51,7 +51,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_ZA',
-    url: 'https://arrowsmartsolutions.com',
+    url: 'https://arrowsmartsolutions.co.za',
     siteName: 'Arrow Smart Solutions',
     title: 'Arrow Smart Solutions | Web Development Packages & Support in South Africa',
     description: 'Professional web development packages and ongoing support for businesses in South Africa. From starter websites to enterprise solutions, we build and maintain your online presence.',
@@ -87,7 +87,7 @@ export const metadata = {
     apple: '/assets/theicon2.png',
   },
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com',
+    canonical: 'https://arrowsmartsolutions.co.za',
   },
 }
 

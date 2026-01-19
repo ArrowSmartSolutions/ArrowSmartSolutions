@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://arrowsmartsolutions.com/sitemap.xml',
+    sitemap: 'https://arrowsmartsolutions.co.za/sitemap.xml',
   }
 }

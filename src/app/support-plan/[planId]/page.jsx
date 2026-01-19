@@ -78,7 +78,7 @@ export async function generateMetadata({ params }) {
       images: ['/assets/hero1.png'],
     },
     alternates: {
-      canonical: `https://arrowsmartsolutions.com/support-plan/${planId}`,
+      canonical: `https://arrowsmartsolutions.co.za/support-plan/${planId}`,
     },
   }
 }

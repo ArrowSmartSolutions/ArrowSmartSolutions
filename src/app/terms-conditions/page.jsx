@@ -14,7 +14,7 @@ export const metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://arrowsmartsolutions.com/terms-conditions',
+    canonical: 'https://arrowsmartsolutions.co.za/terms-conditions',
   },
 }
 
