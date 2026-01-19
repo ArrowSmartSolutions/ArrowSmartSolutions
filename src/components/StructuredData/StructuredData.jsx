@@ -1,5 +1,5 @@
 export default function StructuredData({ type = 'organization' }) {
-  const baseUrl = 'https://arrowsmartsolutions.com'
+  const baseUrl = 'https://arrowsmartsolutions.co.za'
   
   const organizationSchema = {
     '@context': 'https://schema.org',
