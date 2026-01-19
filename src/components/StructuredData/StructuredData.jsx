@@ -6,7 +6,7 @@ export default function StructuredData({ type = 'organization' }) {
     '@type': 'LocalBusiness',
     '@id': baseUrl,
     name: 'Arrow Smart Solutions',
-    description: 'Professional IT services and web development solutions for small businesses and individuals in South Africa.',
+    description: 'Arrow Smart Solutions provides professional software and web development packages and ongoing support for businesses in South Africa. From affordable starter websites to enterprise-grade solutions, we build and maintain your online presence with expert care.',
     url: baseUrl,
     logo: `${baseUrl}/assets/theicon2.png`,
     image: `${baseUrl}/assets/hero.png`,
@@ -37,10 +37,6 @@ export default function StructuredData({ type = 'organization' }) {
       'https://x.com/arrowsmartlife',
       'https://wa.me/message/KWXXB2FOPACRM1',
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      // Add rating if available
-    },
   }
 
   const websiteSchema = {
@@ -61,7 +57,7 @@ export default function StructuredData({ type = 'organization' }) {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'IT Services and Web Development',
+    serviceType: 'Software and Web Development and Support Services',
     provider: {
       '@type': 'LocalBusiness',
       name: 'Arrow Smart Solutions',
@@ -72,30 +68,22 @@ export default function StructuredData({ type = 'organization' }) {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'IT Services',
+      name: 'Software and Web Development and Support Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Web Development',
-            description: 'Custom website development and design services',
+            name: 'Software and Web Development Packages',
+            description: 'Professional software and web development packages from starter to enterprise solutions',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'IT Support',
-            description: 'IT support and maintenance services',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Network Security',
-            description: 'Network security and antivirus solutions',
+            name: 'Ongoing Software and Web Support',
+            description: 'Software and website support, updates, and maintenance plans',
           },
         },
       ],
