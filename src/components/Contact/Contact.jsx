@@ -15,13 +15,20 @@ const Form = () => {
     setIsSubmitting(true);
     setResult("Sending....");
 
-    const formData = new FormData(event.target);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
+    const formData = {
+      firstname: event.target.firstname.value,
+      lastname: event.target.lastname.value,
+      email: event.target.email.value,
+      enquiry: event.target.enquiry.value,
+    };
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_WEB3FORMS_API_URL, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
@@ -29,6 +36,7 @@ const Form = () => {
       if (data.success) {
         setResult("Form Submitted Successfully");
         event.target.reset();
+        setEnquiry("");
         setTimeout(() => setResult(""), 5000);
       } else {
         setResult(data.message || "Error submitting form");

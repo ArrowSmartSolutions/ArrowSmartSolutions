@@ -5,117 +5,43 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const NewsletterPage = () => {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState('');
 
-  useEffect(() => {
-    const mailerLiteAccountId = process.env.NEXT_PUBLIC_MAILERLITE_ACCOUNT_ID;
-    
-    if (!mailerLiteAccountId) {
-      console.error('MailerLite account ID is not configured');
-      return;
-    }
+  const handleNewsletterSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult('Subscribing...');
 
-    // Check if MailerLite is already loaded
-    if (window.ml) {
-      setScriptLoaded(true);
-      window.ml('account', mailerLiteAccountId);
-      return;
-    }
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    // Load MailerLite script
-    const script = document.createElement('script');
-    script.src = 'https://assets.mailerlite.com/js/universal.js';
-    script.async = true;
-    script.onload = () => {
-      setScriptLoaded(true);
-    };
-    document.body.appendChild(script);
+      const data = await response.json();
 
-    // Initialize MailerLite
-    window.ml = window.ml || function() { (window.ml.q = window.ml.q || []).push(arguments); };
-    window.ml('account', mailerLiteAccountId);
-
-    return () => {
-      // Cleanup if needed
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+      if (data.success) {
+        setResult('Successfully subscribed to our newsletter!');
+        setEmail('');
+        setTimeout(() => setResult(''), 5000);
+      } else {
+        setResult(data.message || 'Error subscribing to newsletter');
       }
-    };
-  }, []);
-
-  useEffect(() => {
-    const mailerLiteFormId = process.env.NEXT_PUBLIC_MAILERLITE_FORM_ID;
-    
-    if (scriptLoaded && mailerLiteFormId) {
-      // Ensure the form is loaded
-      window.ml('form', mailerLiteFormId);
+    } catch (error) {
+      setResult('Error: Unable to subscribe');
+      console.error('Newsletter subscription error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [scriptLoaded]);
-
-  if (!scriptLoaded) {
-    return (
-      <StyledWrapper>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className='form'
-        >
-          <p className="title centertxt">
-            Subscribe to Our Newsletter
-          </p>
-          <p className="message centertxt">
-            Loading newsletter form...
-          </p>
-        </motion.div>
-      </StyledWrapper>
-    );
-  }
+  };
 
   return (
     <StyledWrapper>
-      <style type="text/css">{`
-        @import url("https://assets.mlcdn.com/fonts.css?version=1768228");
-
-        .ml-form-embedSubmitLoad {
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-        }
-
-        .ml-form-embedSubmitLoad:after {
-          content: " ";
-          display: block;
-          width: 11px;
-          height: 11px;
-          margin: 1px;
-          border-radius: 50%;
-          border: 4px solid #fff;
-          border-color: #ffffff #ffffff #ffffff transparent;
-          animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-        }
-
-        @keyframes ml-form-embedSubmitLoad {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
-        }
-      `}</style>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -130,7 +56,41 @@ const NewsletterPage = () => {
           Get exclusive content delivered to your inbox regularly.
         </p>
 
-        <div className="ml-embedded" data-form={process.env.NEXT_PUBLIC_MAILERLITE_FORM_ID || ''}></div>
+        <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+          <label htmlFor='newsletter-email'>
+            <input
+              id='newsletter-email'
+              required
+              placeholder=""
+              name='email'
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input"
+              disabled={isSubmitting}
+            />
+            <span>Your Email Address</span>
+          </label>
+
+          <button 
+            aria-label="Subscribe to Newsletter" 
+            type='submit' 
+            className="submit" 
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+          </button>
+
+          {result && (
+            <p className="signin" style={{ color: result.includes('Success') ? '#28a745' : '#ed801c' }}>
+              {result}
+            </p>
+          )}
+
+          <p className="signin">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </form>
       </motion.div>
     </StyledWrapper>
   );
@@ -300,6 +260,11 @@ const StyledWrapper = styled.div`
       border-color: #ed801c;
       box-shadow: 0 0 0 3px rgba(237, 128, 28, 0.1);
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 
   .form label .input + span {
@@ -365,15 +330,26 @@ const StyledWrapper = styled.div`
       font-size: 1.25rem;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: #d63d2a;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(237, 128, 28, 0.3);
     }
 
-    &:active {
+    &:active:not(:disabled) {
       transform: translateY(0);
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .ml-block-form {
@@ -384,80 +360,6 @@ const StyledWrapper = styled.div`
 
   .ml-embedded {
     width: 100%;
-  }
-
-  /* MailerLite embedded form styles */
-  .ml-form-embedContainer {
-    margin: 0;
-    padding: 0;
-  }
-
-  .ml-form-embedWrapper {
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-  }
-
-  .ml-form-embedBody {
-    padding: 0 !important;
-  }
-
-  .ml-form-embedBody .ml-form-embedContent {
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center;
-  }
-
-  .ml-form-embedBody input[type="email"],
-  .ml-form-embedBody input[type="text"] {
-    border-color: rgba(105, 105, 105, 0.397) !important;
-    border-radius: 10px !important;
-    padding: 12px 12px 24px 12px !important;
-    font-size: 1rem !important;
-
-    @media (min-width: 768px) {
-      padding: 14px 14px 26px 14px !important;
-      font-size: 1.05rem !important;
-    }
-
-    &:focus {
-      border-color: #ed801c !important;
-      box-shadow: 0 0 0 3px rgba(237, 128, 28, 0.1) !important;
-      outline: none !important;
-    }
-  }
-
-  .ml-form-embedBody button {
-    background-color: #ed801c !important;
-    border-radius: 10px !important;
-    padding: 12px 20px !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    color: #fff !important;
-    transition: all 0.3s ease !important;
-    margin-top: 0.5rem !important;
-
-    @media (min-width: 768px) {
-      padding: 14px 24px !important;
-      font-size: 1.125rem !important;
-    }
-
-    @media (min-width: 1024px) {
-      padding: 16px 28px !important;
-      font-size: 1.25rem !important;
-    }
-
-    &:hover {
-      background-color: #d63d2a !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 4px 12px rgba(237, 128, 28, 0.3) !important;
-    }
-
-    &:active {
-      transform: translateY(0) !important;
-    }
   }
 
   @keyframes pulse {
