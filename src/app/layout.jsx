@@ -8,10 +8,10 @@ import StructuredData from '../components/StructuredData/StructuredData'
 export const metadata = {
   metadataBase: new URL('https://arrowsmartsolutions.com'),
   title: {
-    default: 'Arrow Smart Solutions | Professional IT Services & Web Development in South Africa',
+    default: 'Arrow Smart Solutions | Web Development Packages & Support in South Africa',
     template: '%s | Arrow Smart Solutions',
   },
-  description: 'Arrow Smart Solutions offers comprehensive IT services, web development, and technical support for small businesses and individuals in South Africa. Expert support for operating system installation, network security, antivirus solutions, and software installation.',
+  description: 'Arrow Smart Solutions provides professional web development packages and ongoing support for businesses in South Africa. From affordable starter websites to enterprise-grade solutions, we build and maintain your online presence with expert care.',
   keywords: [
     'IT services South Africa',
     'web development South Africa',
@@ -53,21 +53,21 @@ export const metadata = {
     locale: 'en_ZA',
     url: 'https://arrowsmartsolutions.com',
     siteName: 'Arrow Smart Solutions',
-    title: 'Arrow Smart Solutions | Professional IT Services & Web Development in South Africa',
-    description: 'Comprehensive IT services and solutions for small businesses and individuals in South Africa. Expert web development, IT support, and technical services.',
+    title: 'Arrow Smart Solutions | Web Development Packages & Support in South Africa',
+    description: 'Professional web development packages and ongoing support for businesses in South Africa. From starter websites to enterprise solutions, we build and maintain your online presence.',
     images: [
       {
         url: '/assets/hero.png',
         width: 1200,
         height: 630,
-        alt: 'Arrow Smart Solutions - IT Services and Web Development',
+        alt: 'Arrow Smart Solutions - Web Development Packages and Support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arrow Smart Solutions | Professional IT Services & Web Development',
-    description: 'Comprehensive IT services and solutions for small businesses and individuals in South Africa.',
+    title: 'Arrow Smart Solutions | Web Development Packages & Support in South Africah Africa',
+    description: 'Professional web development packages and ongoing support for businesses in South Africa.',
     images: ['/assets/hero.png'],
     creator: '@arrowsmartlife',
   },
