@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer'
 import CookieConsent from '../components/CookieConsent/CookieConsent'
 import { Analytics } from '@vercel/analytics/next'
 import StructuredData from '../components/StructuredData/StructuredData'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   metadataBase: new URL('https://arrowsmartsolutions.co.za'),
@@ -104,6 +105,7 @@ export default function RootLayout({ children }) {
           <CookieConsent />
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
