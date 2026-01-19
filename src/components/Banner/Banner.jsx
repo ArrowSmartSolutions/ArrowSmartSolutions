@@ -1,9 +1,9 @@
 'use client'
 import React from 'react';
-import { FaShippingFast } from 'react-icons/fa';
-import { FaRecycle } from 'react-icons/fa';
-import { FaSmile } from 'react-icons/fa';
-import { FaPiggyBank } from 'react-icons/fa';
+import { HiOutlineLightBulb } from 'react-icons/hi';
+import { GiAfrica } from 'react-icons/gi';
+import { BiTrendingUp } from 'react-icons/bi';
+import { FiLock } from 'react-icons/fi';
 import { FadeUp } from '../Hero/Hero';
 import { motion } from 'framer-motion';
 
@@ -41,8 +41,8 @@ const Banner = () => {
 
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
-                    <FaShippingFast className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Fast & reliable services</p>
+                    <HiOutlineLightBulb className='text-lg sm:text-xl md:text-2xl'/>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Innovative Technologies</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.4)}
@@ -52,8 +52,8 @@ const Banner = () => {
 
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
-                    <FaRecycle className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Sustainable practices</p>
+                    <GiAfrica className='text-lg sm:text-xl md:text-2xl'/>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Local Market Expertise</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.6)}
@@ -63,8 +63,8 @@ const Banner = () => {
 
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
-                    <FaSmile className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Customer centric support team</p>
+                    <BiTrendingUp className='text-lg sm:text-xl md:text-2xl'/>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Scalable Business Solutions</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.8)}
@@ -74,8 +74,8 @@ const Banner = () => {
 
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
-                    <FaPiggyBank className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Affordable pricing for small businesses and individuals</p>
+                    <FiLock className='text-lg sm:text-xl md:text-2xl'/>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Transparent Development Process</p>
                 </motion.div>
             </div>
 
