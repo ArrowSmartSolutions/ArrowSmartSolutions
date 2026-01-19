@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const Form = () => {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [enquiry, setEnquiry] = useState("");
-  const maxEnquiryChars = 500;
+  const [message, setMessage] = useState("");
+  const maxMessageChars = 500;
 
   const countNonSpaceChars = (value) => value.replace(/\s/g, "").length;
 
@@ -15,28 +15,21 @@ const Form = () => {
     setIsSubmitting(true);
     setResult("Sending....");
 
-    const formData = {
-      firstname: event.target.firstname.value,
-      lastname: event.target.lastname.value,
-      email: event.target.email.value,
-      enquiry: event.target.enquiry.value,
-    };
+    const formData = new FormData(event.target);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(process.env.NEXT_PUBLIC_WEB3FORMS_API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         setResult("Form Submitted Successfully");
         event.target.reset();
-        setEnquiry("");
+        setMessage("");
         setTimeout(() => setResult(""), 5000);
       } else {
         setResult(data.message || "Error submitting form");
@@ -63,21 +56,23 @@ const Form = () => {
     For urgent inquiries, contact us on WhatsApp or Email. Your privacy is important to us. </p>
         <label htmlFor='firstname'>
             <input 
+            id='firstname'
             required 
             name='firstname'
             placeholder="" 
             type="text"
-            autoComplete='off' 
+            autoComplete="given-name" 
             className="input" />
             <span>Firstname</span>
         </label>
 
         <label htmlFor='lastname'>
             <input 
+            id='lastname'
             name='lastname' 
             required 
             placeholder=""
-            autoComplete='off'
+            autoComplete="family-name"
             type="text" 
             className="input" />
             <span>Lastname</span>
@@ -85,34 +80,37 @@ const Form = () => {
             
     <label htmlFor='email'>
         <input 
+          id='email'
           required
           placeholder=""
           name='email'
           type="email"
+          autoComplete="email"
           className="input" />
         <span>Email</span>
     </label> 
     
-    <label>
+    <label htmlFor='message'>
         <textarea
-        name='enquiry' 
+        id='message'
+        name='message' 
         required
         placeholder="" 
-        autoComplete='off'
+        autoComplete="additional-name"
         rows={4}
-        value={enquiry}
+        value={message}
         onChange={(event) => {
           const nextValue = event.target.value;
-          if (countNonSpaceChars(nextValue) > maxEnquiryChars) return;
-          setEnquiry(nextValue);
+          if (countNonSpaceChars(nextValue) > maxMessageChars) return;
+          setMessage(nextValue);
         }}
         className="input input--textarea" />
         <span
-          className={maxEnquiryChars - countNonSpaceChars(enquiry) <= 50 ? "counter-warning" : ""}
+          className={maxMessageChars - countNonSpaceChars(message) <= 50 ? "counter-warning" : ""}
         >
-          {enquiry.length > 0
-            ? `${countNonSpaceChars(enquiry)}/${maxEnquiryChars}`
-            : "Type Enquiry Here"}
+          {message.length > 0
+            ? `${countNonSpaceChars(message)}/${maxMessageChars}`
+            : "Type Message Here"}
         </span>
     </label> 
     

@@ -64,12 +64,30 @@ const NewsletterPage = () => {
               placeholder=""
               name='email'
               type="email"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input"
               disabled={isSubmitting}
             />
             <span>Your Email Address</span>
+          </label>
+
+          <label htmlFor="newsletter-consent" className="consent-label">
+            <input
+              id="newsletter-consent"
+              type="checkbox"
+              required
+              name="consent"
+              autoComplete="off"
+              className="consent-checkbox"
+            />
+            <span className="consent-text">
+              I agree to receive newsletters from Arrow Smart Solutions and have read the{' '}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-link">
+                Privacy Policy
+              </a>
+            </span>
           </label>
 
           <button 
@@ -350,6 +368,42 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+
+  .consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgba(88, 87, 87, 0.822);
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .consent-checkbox {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    accent-color: #ed801c;
+  }
+
+  .consent-text {
+    flex: 1;
+  }
+
+  .privacy-link {
+    color: #ed801c;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #d63d2a;
+      text-decoration: underline;
+    }
   }
 
   .ml-block-form {
