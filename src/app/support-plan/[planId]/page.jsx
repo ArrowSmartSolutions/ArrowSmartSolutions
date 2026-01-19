@@ -1,4 +1,4 @@
-import SupportDetailClient from '../../../pages/SupportDetail'
+import SupportDetailClient from '../../../components/SupportDetail'
 
 export async function generateStaticParams() {
   return [
@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { planId } = params
+  const { planId } = await params
   
   const metadataMap = {
     basic: {
@@ -83,6 +83,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function SupportDetailPage({ params }) {
-  return <SupportDetailClient planId={params.planId} />
+export default async function SupportDetailPage({ params }) {
+  const { planId } = await params
+  return <SupportDetailClient planId={planId} />
 }

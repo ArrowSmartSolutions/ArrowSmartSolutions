@@ -1,4 +1,4 @@
-import NewsletterPage from '../../pages/NewsletterPage'
+import NewsletterPage from '../../components/NewsletterPage'
 
 export const metadata = {
   title: 'Newsletter Subscription | IT Tips & Business Insights',

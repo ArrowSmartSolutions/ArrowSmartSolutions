@@ -1,4 +1,4 @@
-import PackageDetailClient from '../../../pages/PackageDetail'
+import PackageDetailClient from '../../../components/PackageDetail'
 
 export async function generateStaticParams() {
   return [
@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { packageId } = params
+  const { packageId } = await params
   
   const metadataMap = {
     starter: {
@@ -84,6 +84,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function PackageDetailPage({ params }) {
-  return <PackageDetailClient packageId={params.packageId} />
+export default async function PackageDetailPage({ params }) {
+  const { packageId } = await params
+  return <PackageDetailClient packageId={packageId} />
 }

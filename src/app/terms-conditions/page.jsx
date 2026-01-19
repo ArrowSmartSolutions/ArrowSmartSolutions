@@ -1,4 +1,4 @@
-import TermsConditions from '../../pages/TermsConditions'
+import TermsConditions from '../../components/TermsConditions'
 
 export const metadata = {
   title: 'Terms and Conditions | Arrow Smart Solutions',

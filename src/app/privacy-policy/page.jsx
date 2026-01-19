@@ -1,4 +1,4 @@
-import PrivacyPolicy from '../../pages/PrivacyPolicy'
+import PrivacyPolicy from '../../components/PrivacyPolicy'
 
 export const metadata = {
   title: 'Privacy Policy | Arrow Smart Solutions - Data Protection',

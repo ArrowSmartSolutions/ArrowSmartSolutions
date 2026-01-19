@@ -68,7 +68,7 @@ const CookieConsent = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-3 w-full sm:w-auto">
               <button
                 onClick={handleSettings}
-                className="flex items-center gap-2 px-4 py-3 text-sm md:text-base font-medium text-dark border border-[#ddd] rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-3 text-sm md:text-base font-medium text-dark border border-[#ddd] rounded-lg hover:bg-gray-50 transition-colors"
                 aria-label="Cookie settings"
               >
                 <FiSettings className="text-lg" />
