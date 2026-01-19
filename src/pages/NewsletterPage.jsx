@@ -82,7 +82,7 @@ const NewsletterPage = () => {
           </button>
 
           {result && (
-            <p className="signin" style={{ color: result.includes('Success') ? '#28a745' : '#ed801c' }}>
+            <p className="signin" style={{ color: result === 'Successfully subscribed to our newsletter!' ? '#28a745' : '#ed801c' }}>
               {result}
             </p>
           )}

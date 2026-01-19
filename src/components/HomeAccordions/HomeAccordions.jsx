@@ -49,7 +49,7 @@ const AccordionList = ({ items, openIndex, onToggle }) => (
           >
             <span className="text-base md:text-lg font-semibold text-dark">{item.title}</span>
             <span
-              className={`mt-1 flex h-8 w-8 items-center justify-center rounded-full border text-lg transition-colors ${
+              className={`mt-1 flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-full border text-base md:text-lg transition-colors ${
                 isOpen ? 'border-primary text-primary bg-white' : 'border-[#ddd] text-dark2 bg-white'
               }`}
               aria-hidden="true"
