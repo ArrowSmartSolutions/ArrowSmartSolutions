@@ -1,6 +1,7 @@
 import '../index.css'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
+import CookieConsent from '../components/CookieConsent/CookieConsent'
 import { Analytics } from '@vercel/analytics/next'
 import StructuredData from '../components/StructuredData/StructuredData'
 
@@ -100,6 +101,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <CookieConsent />
         </div>
         <Analytics />
       </body>
