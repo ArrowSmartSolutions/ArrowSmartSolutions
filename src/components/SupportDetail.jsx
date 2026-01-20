@@ -251,7 +251,7 @@ const SupportDetail = ({ planId }) => {
           >
             <h2 className='text-3xl font-bold mb-6'>Ready to Get Started?</h2>
             <p className='text-xl text-dark2 mb-8'>Choose this support plan to keep your website running smoothly.</p>
-            <button className='primary-btn'>Contact Us Now</button>
+            <button className='primary-btn' onClick={() => router.push('/contact')}>Contact Us Now</button>
           </motion.div>
 
           <motion.div

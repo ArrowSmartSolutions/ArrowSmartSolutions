@@ -21,16 +21,6 @@ const NavbarMenu = [
     title: "About Us",
     path: "/about",
   },
-  {
-    id: 4,
-    title: "Our Team",
-    path: "/team",
-  },
-  {
-    id: 5,
-    title: "Contact Us",
-    path: "/contact",
-  },
 
 ];
 
@@ -128,7 +118,7 @@ const router = useRouter();
               );
             }
           })}
-            <button aria-label="Get Quote" onClick={handleGetQuote} className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6'>Get Quote</button>
+            <button aria-label="Contact Us" onClick={handleGetQuote} className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6'>Contact Us</button>
 
         </ul>
       </div>
@@ -159,7 +149,7 @@ const router = useRouter();
                 </Link>
               </li>
             ))}
-            <button className='primary-btn text-xs sm:text-sm md:text-base' onClick={() => { handleGetQuote(); setIsMenuOpen(false); }}>Get Quote</button>
+            <button className='primary-btn text-xs sm:text-sm md:text-base' onClick={() => { handleGetQuote(); setIsMenuOpen(false); }}>Contact Us</button>
           </ul>
         </div>
       )}

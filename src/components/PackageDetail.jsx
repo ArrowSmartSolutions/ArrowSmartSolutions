@@ -225,7 +225,7 @@ const PackageDetail = ({ packageId }) => {
           >
             <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6'>Ready to Get Started?</h2>
             <p className='text-sm sm:text-base md:text-lg text-dark2 mb-8'>Contact us today to discuss how we can bring your vision to life.</p>
-            <button className='primary-btn'>Contact Us Now</button>
+            <button className='primary-btn' onClick={() => router.push('/contact')}>Contact Us Now</button>
           </motion.div>
 
           <motion.div
