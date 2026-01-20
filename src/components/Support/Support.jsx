@@ -52,7 +52,7 @@ const PlanCard = ({ plan, isHovered, isSelected, onHover, onHoverEnd, onSelect, 
     onMouseEnter={onHover}
     onMouseLeave={onHoverEnd}
     onClick={onSelect}
-    className={`p-5 md:p-6 lg:p-7 rounded-2xl border transition-all duration-300 cursor-pointer ${isSelected || isHovered ? 'bg-secondary text-white border-secondary shadow-2xl' : 'bg-white text-dark border-[#eee] shadow-sm'}`}
+    className={`p-5 md:p-6 lg:p-7 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col h-full ${isSelected || isHovered ? 'bg-secondary text-white border-secondary shadow-2xl' : 'bg-white text-dark border-[#eee] shadow-sm'}`}
     role="button"
     tabIndex={0}
     aria-pressed={isSelected}
@@ -64,18 +64,20 @@ const PlanCard = ({ plan, isHovered, isSelected, onHover, onHoverEnd, onSelect, 
       }
     }}
   >
-    <div>
-      <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{plan.title}</div>
-      <div className={`mt-2 text-sm font-bold ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`}>{plan.price}</div>
+    <div className="flex-grow">
+      <div>
+        <div className={`text-base md:text-lg lg:text-xl font-semibold ${isSelected || isHovered ? 'text-white' : 'text-dark'}`}>{plan.title}</div>
+        <div className={`mt-2 text-sm font-bold ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`}>{plan.price}</div>
+      </div>
+      <ul className='mt-4 space-y-2'>
+        {plan.bullets.map((b) => (
+          <li key={b} className='flex items-start gap-2'>
+            <FiCheckCircle className={`mt-1 flex-shrink-0 ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`} />
+            <span className={`text-xs md:text-sm lg:text-base ${isSelected || isHovered ? 'text-gray-100' : 'text-dark2'}`}>{b}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className='mt-4 space-y-2'>
-      {plan.bullets.map((b) => (
-        <li key={b} className='flex items-start gap-2'>
-          <FiCheckCircle className={`mt-1 flex-shrink-0 ${isSelected || isHovered ? 'text-white' : 'text-secondary'}`} />
-          <span className={`text-xs md:text-sm lg:text-base ${isSelected || isHovered ? 'text-gray-100' : 'text-dark2'}`}>{b}</span>
-        </li>
-      ))}
-    </ul>
     <motion.button 
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
