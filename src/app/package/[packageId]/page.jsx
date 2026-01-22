@@ -13,11 +13,11 @@ export async function generateMetadata({ params }) {
   
   const metadataMap = {
     starter: {
-      title: 'Starter Website Package R4,999-R8,000 | Affordable Web Design South Africa',
-      description: 'Starter Website Package from R4,999-R8,000. Perfect for freelancers, small local businesses, startups & bloggers. Includes responsive web design, basic SEO setup, CMS, up to 5 pages, and mobile-first approach. Get started with affordable web development in South Africa.',
+      title: 'Starter Website Package R2,999-R8,000 | Affordable Web Design South Africa',
+      description: 'Starter Website Package from R2,999-R8,000. Perfect for freelancers, small local businesses, startups & bloggers. Includes responsive web design, basic SEO setup, CMS, up to 5 pages, and mobile-first approach. Get started with affordable web development in South Africa.',
       keywords: [
         'starter website package South Africa',
-        'affordable website design R4999',
+        'affordable website design R2999',
         'small business website package',
         'freelance website design',
         'startup website package',

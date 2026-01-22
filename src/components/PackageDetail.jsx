@@ -13,7 +13,7 @@ const PackageDetail = ({ packageId }) => {
   const packageDetails = {
     starter: {
       title: 'Starter Package',
-      price: 'From R4,999 - R8,000',
+      price: 'From R2,999 - R8,000',
       description: 'Perfect for launching your online presence',
       useCases: [
         {
