@@ -8,7 +8,7 @@ const packages = [
   {
     id: 'starter',
     title: 'Starter Package',
-    price: 'From R4,999 – R8,000',
+    price: 'From R2,999 - R8,000',
     details: [
       'Responsive Web Design',
       'Basic SEO Setup',
@@ -21,7 +21,7 @@ const packages = [
   {
     id: 'business',
     title: 'Business Package',
-    price: 'From R12,000 – R25,000',
+    price: 'From R12,000 - R25,000',
     details: [
       'Everything in Starter',
       'Custom Feature Development',
@@ -34,7 +34,7 @@ const packages = [
   {
     id: 'professional',
     title: 'Professional Package',
-    price: 'From R30,000 – R60,000+',
+    price: 'From R30,000 - R60,000+',
     details: [
       'Everything in Business',
       'Enterprise-grade Security',
