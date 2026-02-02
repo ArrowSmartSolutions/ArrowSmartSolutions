@@ -99,7 +99,7 @@ const Support = () => {
   const router = useRouter();
 
   const handleNavigate = (planId) => {
-    router.push(`/support-plan/${planId}`);
+    router.push(`/subscriptions/support/${planId}`);
   };
 
   return (

@@ -2,6 +2,7 @@ import '../index.css'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import CookieConsent from '../components/CookieConsent/CookieConsent'
+import WhatsAppAssistant from '../components/WhatsAppAssistant/WhatsAppAssistant'
 import { Analytics } from '@vercel/analytics/next'
 import StructuredData from '../components/StructuredData/StructuredData'
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
         <div className="overflow-x-hidden bg-white text-dark">
           <Navbar />
           {children}
+          <WhatsAppAssistant />
           <Footer />
           <CookieConsent />
         </div>

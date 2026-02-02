@@ -20,7 +20,7 @@ export const subscriptionPlans = [
     setupFee: 'R4,500 (initial build)',
     highlights: [
       'Custom-designed website that looks premium and trustworthy',
-      'Lead capture setup with Web3Forms + Calendly booking',
+      'Lead capture setup with smart forms and booking flow',
       'Monthly SEO health checks + keyword tracking',
       'Priority WhatsApp support with 2 hours of dev time',
     ],
@@ -70,8 +70,8 @@ export const subscriptionPlanDetails = {
     techStack: 'High-performance build tuned for speed and uptime.',
     deliverables: [
       'Custom UI that matches your brand and builds trust',
-      'Lead capture forms wired to Web3Forms',
-      'Calendly booking to reduce back-and-forth',
+      'Lead capture forms built to convert inquiries',
+      'Booking flow to reduce back-and-forth',
     ],
     seo: 'Monthly SEO health checks with basic keyword tracking.',
     support: 'Priority WhatsApp support plus 2 hours of dev time per month.',

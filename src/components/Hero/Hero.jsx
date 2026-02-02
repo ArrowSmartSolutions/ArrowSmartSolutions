@@ -28,7 +28,7 @@ const Hero = () => {
   const router = useRouter();
 
   const handleViewPackages = () => {
-    router.push('/services');
+    router.push('/packages');
   };
 
   return (

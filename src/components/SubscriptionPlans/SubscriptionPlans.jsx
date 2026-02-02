@@ -67,7 +67,7 @@ const SubscriptionPlans = () => {
   const router = useRouter();
 
   const handleNavigate = (planId) => {
-    router.push(`/subscription-plan/${planId}`);
+    router.push(`/subscriptions/${planId}`);
   };
 
   return (

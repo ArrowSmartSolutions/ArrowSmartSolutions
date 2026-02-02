@@ -151,7 +151,7 @@ const SubscriptionPlanDetail = ({ planId }) => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    onClick={() => router.push(`/subscription-plan/${id}`)}
+                    onClick={() => router.push(`/subscriptions/${id}`)}
                     className='p-6 bg-light border border-secondary rounded-2xl text-left hover:shadow-lg transition-all duration-300'
                   >
                     <h3 className='text-lg sm:text-xl md:text-2xl font-bold text-secondary mb-2'>{plan.title}</h3>

@@ -9,7 +9,13 @@ export default function sitemap() {
       priority: 1,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/packages`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/subscriptions`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -69,46 +75,40 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // Support plan pages
-    {
-      url: `${baseUrl}/support-plan/basic`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/support-plan/standard`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/support-plan/priority`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
     // Subscription plan pages
     {
-      url: `${baseUrl}/subscription-plan`,
+      url: `${baseUrl}/subscriptions/personal-brand`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/subscription-plan/personal-brand`,
+      url: `${baseUrl}/subscriptions/business-growth`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/subscription-plan/business-growth`,
+      url: `${baseUrl}/subscriptions/enterprise-solution`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // Support plan pages
+    {
+      url: `${baseUrl}/subscriptions/support/basic`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/subscription-plan/enterprise-solution`,
+      url: `${baseUrl}/subscriptions/support/standard`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/subscriptions/support/priority`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

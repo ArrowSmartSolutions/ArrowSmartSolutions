@@ -34,7 +34,7 @@ const Footer = () => {
         initial={{opacity: 0, y:50}}
         whileInView={{opacity:1, y:0}}
          className='container'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.8fr_1.1fr] xl:grid-cols-[1.1fr_2fr_1.1fr] gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20'>
                 {/*first section*/}
                 <div className='space-y-4 md:space-y-6'>
                     {/*Logo section*/}
@@ -49,9 +49,9 @@ const Footer = () => {
                           <path d='M30 60 L50 40 L70 60' fill='none' stroke='white' strokeWidth='8' strokeLinecap='round' strokeLinejoin='round' />
                           <circle cx='50' cy='58' r='5' fill='white' />
                         </svg>
-                        <h1 className='font-bold my-auto text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl whitespace-nowrap'>Arrow Smart Solutions</h1>
+                        <h1 className='font-bold my-auto text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl whitespace-nowrap'>Arrow Smart Solutions</h1>
                     </div>
-                    <p className='text-dark2 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed'>
+                    <p className='text-dark2 text-xs sm:text-sm md:text-sm lg:text-base leading-relaxed'>
                     Arrow Smart Solutions offers reliable,
                     affordable IT support tailored to small businesses and individuals.
                     From resolving technical issues to designing professional websites,
@@ -60,11 +60,14 @@ const Footer = () => {
                     </p>
                 </div>
                 {/*second section*/}
-                <div className='grid grid-cols-2 gap-6 sm:gap-8 md:gap-10'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12'>
                     <div className='space-y-3 md:space-y-4'>
-                        <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>Services</h1>
-                        <div className='text-dark2'>
-                            <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg'>
+                        <h1 className='text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl font-bold leading-tight'>Packages</h1>
+                    <div className='text-dark2'>
+                            <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-sm lg:text-base'>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/packages">All Packages</Link>
+                                </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
                                 <Link href="/package/starter">Starter Package</Link>
                                 </li>
@@ -74,27 +77,49 @@ const Footer = () => {
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
                                 <Link href="/package/professional">Professional Package</Link>
                                 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className='space-y-3 md:space-y-4'>
+                        <h1 className='text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl font-bold leading-tight'>Subscriptions</h1>
+                        <div className='text-dark2'>
+                            <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-sm lg:text-base'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link href="/support-plan/basic">Basic Support</Link>
+                                <Link href="/subscriptions">All Subscriptions</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link href="/support-plan/standard">Standard Support</Link>
+                                <Link href="/subscriptions/personal-brand">Personal Brand</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link href="/support-plan/priority">Priority Support</Link>
+                                <Link href="/subscriptions/business-growth">Business Growth</Link>
+                                </li>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/subscriptions/enterprise-solution">Enterprise Solution</Link>
+                                </li>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/subscriptions/support/basic">Basic Support</Link>
+                                </li>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/subscriptions/support/standard">Standard Support</Link>
+                                </li>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/subscriptions/support/priority">Priority Support</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className='space-y-3 md:space-y-4'>
-                        <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>Navigation</h1>
+                        <h1 className='text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl font-bold leading-tight'>Navigation</h1>
                         <div className='text-dark2'>
-                            <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg'>
+                            <ul className='space-y-1 md:space-y-2 text-xs sm:text-sm md:text-sm lg:text-base'>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
                                 <Link href="/">Home</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
-                                <Link href="/services">Services</Link>
+                                <Link href="/packages">Packages</Link>
+                                </li>
+                                <li className='cursor-pointer hover:text-secondary duration-200'>
+                                <Link href="/subscriptions">Subscriptions</Link>
                                 </li>
                                 <li className='cursor-pointer hover:text-secondary duration-200'>
                                 <Link href="/about">About Us</Link>
@@ -111,8 +136,8 @@ const Footer = () => {
                 </div>
                 {/*third section*/}
                 <div className='space-y-3 md:space-y-4'>
-                    <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>Newsletter</h1>
-                    <p className='text-xs sm:text-sm text-dark2 leading-relaxed mb-4'>
+                    <h1 className='text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl font-bold'>Newsletter</h1>
+                    <p className='text-xs sm:text-sm md:text-sm lg:text-base text-dark2 leading-relaxed mb-4'>
                         Stay updated with the latest IT support tips and business insights delivered to your inbox.
                     </p>
                     <Link
@@ -122,7 +147,7 @@ const Footer = () => {
                     >
                         Subscribe to Newsletter
                     </Link>
-                    <p className='text-xs sm:text-sm text-dark2 leading-relaxed'>
+                    <p className='text-xs sm:text-sm md:text-sm lg:text-base text-dark2 leading-relaxed'>
                         By subscribing, you agree to our <Link href="/terms-conditions" className='text-primary hover:text-secondary font-semibold'>Terms and Conditions</Link> of use.
                     </p>
                     {/* social icons */}
