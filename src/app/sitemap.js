@@ -88,5 +88,30 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // Subscription plan pages
+    {
+      url: `${baseUrl}/subscription-plan`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/subscription-plan/personal-brand`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/subscription-plan/business-growth`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/subscription-plan/enterprise-solution`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }

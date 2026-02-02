@@ -1,0 +1,107 @@
+export const subscriptionPlans = [
+  {
+    id: 'personal-brand',
+    title: 'Personal Brand',
+    label: 'Portfolios & Freelancers',
+    monthlyPrice: 'R650 / month',
+    setupFee: 'R1,500 (once-off)',
+    highlights: [
+      'Lightning-fast portfolio site built for speed and stability',
+      'Conversion-focused landing page + showcase gallery/project page',
+      'Local SEO to help clients find you by name and profession',
+      'Monthly content touch-ups (1 text or image update) + email support',
+    ],
+  },
+  {
+    id: 'business-growth',
+    title: 'Business Growth',
+    label: 'Small to Medium Businesses',
+    monthlyPrice: 'R1,850 / month',
+    setupFee: 'R4,500 (initial build)',
+    highlights: [
+      'Custom-designed website that looks premium and trustworthy',
+      'Lead capture setup with Web3Forms + Calendly booking',
+      'Monthly SEO health checks + keyword tracking',
+      'Priority WhatsApp support with 2 hours of dev time',
+    ],
+  },
+  {
+    id: 'enterprise-solution',
+    title: 'Enterprise Solution',
+    label: 'Large Scale / High Traffic',
+    monthlyPrice: 'R6,500 - R12,000+ / month',
+    setupFee: 'R25,000+ (strategy and build)',
+    highlights: [
+      'Scalable platform with CMS and analytics',
+      'Multi-page site with CRM sync and A/B testing for conversions',
+      'Dedicated Slack or direct line + 5-10 hours dev time',
+      'National SEO strategy with high-velocity content updates',
+    ],
+  },
+];
+
+export const subscriptionPlanDetails = {
+  'personal-brand': {
+    title: 'Personal Brand Plan',
+    description: 'Best for creatives, photographers, and independent consultants.',
+    monthlyPrice: 'R650 / month',
+    setupFee: 'R1,500 (once-off)',
+    domain: 'Included (.co.za)',
+    techStack: 'Modern Next.js build optimized for speed and reliability.',
+    deliverables: [
+      'High-speed personal landing page that highlights your value',
+      'Gallery or project page to showcase your best work',
+    ],
+    seo: 'Local search setup so clients find you by name and industry.',
+    support: 'Email support with one minor text or image update per month.',
+    bestFor: [
+      'Creatives and photographers building visibility',
+      'Freelancers and consultants who need credibility fast',
+      'Solo studios that want a premium online presence',
+      'Portfolio-first brands that need speed and polish',
+    ],
+  },
+  'business-growth': {
+    title: 'Business Growth Plan',
+    description: 'Best for lawyers, plumbers, agencies, startups, and service businesses.',
+    monthlyPrice: 'R1,850 / month',
+    setupFee: 'R4,500 (initial build)',
+    domain: 'Included (.co.za or .com)',
+    techStack: 'High-performance build tuned for speed and uptime.',
+    deliverables: [
+      'Custom UI that matches your brand and builds trust',
+      'Lead capture forms wired to Web3Forms',
+      'Calendly booking to reduce back-and-forth',
+    ],
+    seo: 'Monthly SEO health checks with basic keyword tracking.',
+    support: 'Priority WhatsApp support plus 2 hours of dev time per month.',
+    bestFor: [
+      'Local service businesses that need more leads',
+      'Agencies and consultancies building authority',
+      'Growing startups ready to scale demand',
+      'Teams focused on lead generation and bookings',
+    ],
+  },
+  'enterprise-solution': {
+    title: 'Enterprise Solution',
+    description: 'Best for multi-location companies, high-traffic blogs, and national brands.',
+    monthlyPrice: 'R6,500 - R12,000+ / month',
+    setupFee: 'R25,000+ (strategy and build)',
+    domain: 'Premium DNS management included.',
+    techStack: 'Scalable architecture with a headless CMS and analytics.',
+    deliverables: [
+      'Multi-page site built for scale and teams',
+      'CRM sync to route leads automatically',
+      'A/B testing to improve conversion rates',
+      'Speed monitoring for always-on performance',
+    ],
+    seo: 'National keyword strategy with high-velocity content updates.',
+    support: 'Dedicated Slack or direct line with 5-10 hours dev time.',
+    bestFor: [
+      'High-traffic brands that cannot afford downtime',
+      'National or multi-location companies',
+      'Performance-critical platforms with heavy demand',
+      'Teams needing a fractional web master',
+    ],
+  },
+};

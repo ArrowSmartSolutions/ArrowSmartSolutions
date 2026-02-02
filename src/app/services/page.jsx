@@ -1,6 +1,7 @@
 import Services from '../../components/Services/Services'
 import Banner from '../../components/Banner/Banner'
 import Support from '../../components/Support/Support'
+import SubscriptionPlans from '../../components/SubscriptionPlans/SubscriptionPlans'
 
 export const metadata = {
   title: 'IT Services & Web Development Packages in South Africa',
@@ -41,6 +42,7 @@ export default function ServicesPage() {
   return (
     <main className="overflow-x-hidden bg-white text-dark pt-20 sm:pt-24 md:pt-28 lg:pt-32">
       <Services />
+      <SubscriptionPlans />
       <Support />
       <Banner />
     </main>
