@@ -16,11 +16,25 @@ const Form = () => {
     setResult("Sending....");
 
     const formData = new FormData(event.target);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
+
+    // Treat literal string 'undefined' as not set (common when env var was misconfigured)
+    const envUrl = process.env.NEXT_PUBLIC_WEB3FORMS_API_URL;
+    const hasExternalUrl = envUrl && envUrl !== 'undefined';
+
+    // Only append public access key when posting directly to Web3Forms from the client
+    if (hasExternalUrl) {
+      const publicKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (publicKey && publicKey !== 'undefined') {
+        formData.append("access_key", publicKey);
+      }
+    }
 
     try {
       // Prefer using local server proxy to hide API keys; fallback to external URL if provided
-      const targetUrl = process.env.NEXT_PUBLIC_WEB3FORMS_API_URL || '/api/contact';
+      const targetUrl = hasExternalUrl ? envUrl : '/api/contact';
+
+      // Debugging: log resolved target URL when developing
+      if (process.env.NODE_ENV !== 'production') console.debug('Contact form target URL:', targetUrl);
 
       const response = await fetch(targetUrl, {
         method: "POST",
