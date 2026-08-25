@@ -19,7 +19,10 @@ const Form = () => {
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_WEB3FORMS_API_URL, {
+      // Prefer using local server proxy to hide API keys; fallback to external URL if provided
+      const targetUrl = process.env.NEXT_PUBLIC_WEB3FORMS_API_URL || '/api/contact';
+
+      const response = await fetch(targetUrl, {
         method: "POST",
         body: formData
       });

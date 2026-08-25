@@ -2,7 +2,19 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const body = await request.json();
+    // Support both JSON and multipart/form-data requests from clients
+    let body = {};
+    const reqContentType = request.headers.get('content-type') || '';
+
+    if (reqContentType.includes('multipart/form-data')) {
+      const form = await request.formData();
+      form.forEach((value, key) => {
+        // formData values can be File objects; convert to string when possible
+        body[key] = value && typeof value === 'object' && value.name ? value : String(value);
+      });
+    } else {
+      body = await request.json();
+    }
 
     // Create FormData for Web3Forms
     const formData = new FormData();
