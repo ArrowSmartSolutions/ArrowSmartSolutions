@@ -6,13 +6,26 @@ export async function POST(request) {
 
     // Create FormData for Web3Forms
     const formData = new FormData();
-    formData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY);
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.error('Missing WEB3FORMS_ACCESS_KEY in environment');
+      return NextResponse.json({ success: false, message: 'Server misconfiguration: missing API key' }, { status: 500 });
+    }
+
+    formData.append('access_key', accessKey);
     formData.append('firstname', body.firstname || '');
     formData.append('lastname', body.lastname || '');
     formData.append('email', body.email || '');
-    formData.append('enquiry', body.enquiry || '');
+    // Accept either `enquiry` or `message` from different clients
+    formData.append('enquiry', body.enquiry || body.message || '');
 
-    const response = await fetch(process.env.WEB3FORMS_API_URL, {
+    const apiUrl = process.env.WEB3FORMS_API_URL;
+    if (!apiUrl) {
+      console.error('Missing WEB3FORMS_API_URL in environment');
+      return NextResponse.json({ success: false, message: 'Server misconfiguration: missing API URL' }, { status: 500 });
+    }
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       body: formData,
     });
@@ -26,11 +39,11 @@ export async function POST(request) {
     } else {
       // If not JSON, get text response (likely HTML error page)
       const textResponse = await response.text();
-      console.error('Web3Forms returned non-JSON response:', textResponse);
-      
+      console.error('Web3Forms returned non-JSON response:', response.status, textResponse.substring(0, 200));
+
       return NextResponse.json(
-        { success: false, message: 'Form submission service is currently unavailable. Please try again later.' },
-        { status: 500 }
+        { success: false, message: 'Upstream service returned non-JSON response; check server logs for details.' },
+        { status: 502 }
       );
     }
 

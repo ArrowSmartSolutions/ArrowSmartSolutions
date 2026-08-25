@@ -24,15 +24,27 @@ const Form = () => {
         body: formData
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get('content-type') || '';
+      let data;
 
-      if (data.success) {
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        // If the response is not JSON (likely an HTML error page), capture text for debugging
+        const text = await response.text();
+        console.error('Non-JSON response from form endpoint:', response.status, text);
+        setResult('Error: Form service returned an unexpected response. See console for details.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (data && data.success) {
         setResult("Form Submitted Successfully");
         event.target.reset();
         setMessage("");
         setTimeout(() => setResult(""), 5000);
       } else {
-        setResult(data.message || "Error submitting form");
+        setResult((data && data.message) || "Error submitting form");
       }
     } catch (error) {
       setResult("Error: Unable to submit form");
