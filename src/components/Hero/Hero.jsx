@@ -48,7 +48,7 @@ const Hero = () => {
               variants={FadeUp(0.8)}
               initial="initial"
               animate="animate"
-              className="text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-[600px] leading-relaxed"
+              className="text-xs sm:text-sm md:text-base lg:text-base text-dark2 max-w-[600px] leading-relaxed"
             >
               At Arrow Smart Solutions, based in the heart of South Africa, we craft exceptional web
               experiences and robust digital platforms tailored for your success. Whether you're a startup or
@@ -59,7 +59,7 @@ const Hero = () => {
             initial="initial"
             animate="animate"
              className='flex justify-center md:justify-start p-2 sm:p-3 md:p-4'>
-                <button onClick={handleViewPackages} className="primary-btn flex items-center gap-2 text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8">
+                <button onClick={handleViewPackages} className="primary-btn flex items-center gap-2 text-xs sm:text-sm md:text-base lg:text-base py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8">
                     View Our Packages
                     <IoIosArrowRoundForward className='text-sm sm:text-base md:text-lg lg:text-xl group-hover:translate-x-2
                     group-hover:-rotate-45 duration-300' />

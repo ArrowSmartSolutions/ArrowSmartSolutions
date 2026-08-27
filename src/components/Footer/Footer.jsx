@@ -34,7 +34,7 @@ const Footer = () => {
         initial={{opacity: 0, y:50}}
         whileInView={{opacity:1, y:0}}
          className='container'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.8fr_1.1fr] xl:grid-cols-[1.1fr_2fr_1.1fr] gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_2fr_1.1fr] gap-4 sm:gap-6 md:gap-8 lg:gap-8'>
                 {/*first section*/}
                 <div className='space-y-3 md:space-y-4'>
                     {/*Logo section*/}
@@ -60,7 +60,7 @@ const Footer = () => {
                     </p>
                 </div>
                 {/*second section*/}
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-6 min-w-0'>
                     <div className='space-y-2.5 md:space-y-3'>
                         <h1 className='text-sm sm:text-base md:text-base lg:text-base xl:text-lg font-bold leading-tight'>Packages</h1>
                     <div className='text-dark2'>
@@ -152,7 +152,7 @@ const Footer = () => {
                     </p>
                     {/* social icons */}
                     <div className='flex justify-start items-center gap-3 sm:gap-4 py-2'>
-                        <a target="_blank" href="https://wa.me/message/KWXXB2FOPACRM1" aria-label="Visit our WhatsApp">
+                        <a target="_blank" href="https://wa.me/message/LKQR4AI5Y474A1" aria-label="Visit our WhatsApp">
                             <FaWhatsapp className='text-base sm:text-lg cursor-pointer hover:text-primary
                              hover:scale-110 duration-200'/>
                         </a>

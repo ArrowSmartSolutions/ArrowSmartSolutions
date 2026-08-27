@@ -42,11 +42,11 @@ const SubscriptionPlanDetail = ({ planId }) => {
         >
           <div className='text-center mb-12 sm:mb-16'>
             <div>
-              <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>{details.title}</h1>
+              <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold'>{details.title}</h1>
               <p className='mt-2 text-sm sm:text-base font-bold text-secondary'>{details.monthlyPrice}</p>
               <p className='mt-1 text-xs sm:text-sm text-dark2'>Setup fee: {details.setupFee}</p>
             </div>
-            <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 mt-4'>{details.description}</p>
+            <p className='text-xs sm:text-sm md:text-base lg:text-base text-dark2 mt-4'>{details.description}</p>
           </div>
 
           <motion.div
@@ -123,7 +123,7 @@ const SubscriptionPlanDetail = ({ planId }) => {
             className='text-center'
           >
             <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-4'>Ready to get started?</h2>
-            <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 mb-6'>
+            <p className='text-xs sm:text-sm md:text-base lg:text-base text-dark2 mb-6'>
               Tell us about your goals and we will confirm the best plan fit.
             </p>
             <button className='primary-btn' onClick={() => router.push('/contact')}>Contact Us Now</button>

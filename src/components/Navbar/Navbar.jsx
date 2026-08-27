@@ -86,14 +86,14 @@ const router = useRouter();
       initial={{opacity:0, y: -50 }}
       animate={{opacity:1, y:0}}
 
-       className='py-2 sm:py-2.5 md:py-3 lg:py-4 fixed top-0 left-0 right-0 z-50 bg-light bg-opacity-50 backdrop-blur-md w-full lg:px-[5vw]'>
-        <div className='container flex items-center justify-between gap-4 md:gap-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-10 xl:gap-14 lg:max-w-none lg:w-full lg:px-0'>
+      className='py-2 sm:py-2.5 md:py-3 lg:py-3 fixed top-0 left-0 right-0 z-50 bg-light bg-opacity-50 backdrop-blur-md w-full lg:px-[4vw]'>
+       <div className='container flex items-center justify-between gap-4 md:gap-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:max-w-none lg:w-full lg:px-0'>
           {/*Logo section*/}
-          <div className='flex flex-row items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 my-auto lg:justify-self-start'>
+          <div className='flex flex-row items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-2.5 my-auto lg:justify-self-start'>
           <svg
             viewBox='0 0 100 100'
             aria-hidden='true'
-            className='w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-secondary'
+            className='w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-7 lg:h-7 text-secondary'
           >
             <circle cx='50' cy='50' r='47' fill='none' stroke='currentColor' strokeWidth='4' />
             <circle cx='50' cy='50' r='42' fill='currentColor' />
@@ -110,14 +110,14 @@ const router = useRouter();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className='font-bold my-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl whitespace-nowrap'
+              className='font-bold my-auto text-xs sm:text-sm md:text-base lg:text-[20px] whitespace-nowrap'
             >
               Arrow Smart Solutions
             </button>
           </div>
           {/*Menu section*/}
           <div className='hidden lg:flex items-center justify-center min-w-0 lg:justify-self-center'>
-            <ul className='flex flex-wrap xl:flex-nowrap items-center justify-center gap-x-2.5 gap-y-1 min-w-0 max-w-full'>
+            <ul className='flex flex-nowrap items-center justify-center gap-x-1 min-w-0 max-w-full'>
               {NavbarMenu.map((menu) => {
                 if (menu.submenu) {
                   return (
@@ -127,7 +127,7 @@ const router = useRouter();
                       onMouseEnter={() => setOpenDropdown(menu.title)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
-                      <Link href={menu.path} className={`inline-flex items-center gap-1 py-1.5 px-2 sm:px-2.5 md:px-3 hover:text-secondary relative group text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold whitespace-nowrap ${isActive(menu) ? 'text-secondary lg:border lg:border-secondary lg:rounded-full' : ''}`}>
+                      <Link href={menu.path} className={`inline-flex items-center gap-1 py-1.5 px-2 sm:px-2.5 md:px-3 hover:text-secondary relative group text-[10px] sm:text-xs md:text-sm lg:text-[14px] font-semibold whitespace-nowrap ${isActive(menu) ? 'text-secondary lg:border lg:border-secondary lg:rounded-full' : ''}`}>
                         <div className='w-2 h-2 bg-secondary absolute mt-2 rounded-full
                         left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden'></div>
                         {menu.title}
@@ -149,7 +149,7 @@ const router = useRouter();
                 }
                 return (
                   <li key={menu.id}>
-                    <Link href={menu.path} className={`inline-block py-1.5 px-2 sm:px-2.5 md:px-3 hover:text-secondary relative group text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold whitespace-nowrap ${isActive(menu) ? 'text-secondary lg:border lg:border-secondary lg:rounded-full' : ''}`}>
+                    <Link href={menu.path} className={`inline-block py-1.5 px-2 sm:px-2.5 md:px-3 hover:text-secondary relative group text-[10px] sm:text-xs md:text-sm lg:text-[14px] font-semibold whitespace-nowrap ${isActive(menu) ? 'text-secondary lg:border lg:border-secondary lg:rounded-full' : ''}`}>
                       <div className='w-2 h-2 bg-secondary absolute mt-2 rounded-full
                       left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden'></div>
                       {menu.title}
@@ -159,7 +159,7 @@ const router = useRouter();
               })}
             </ul>
           </div>
-          <button aria-label="Contact Us" onClick={handleGetQuote} className='hidden lg:inline-flex primary-btn py-1.5 sm:py-2 md:py-2.5 px-3 sm:px-4 md:px-5 text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap lg:justify-self-end'>Contact Us</button>
+          <button aria-label="Contact Us" onClick={handleGetQuote} className='hidden lg:inline-flex primary-btn py-1.5 sm:py-2 md:py-2.5 px-3 sm:px-4 md:px-5 text-[10px] sm:text-xs md:text-sm lg:text-[14px] whitespace-nowrap lg:justify-self-end'>Contact Us</button>
             {/* Mobile Hamburger menu section */}
             <div className='lg:hidden'>
               <button

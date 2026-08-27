@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 
-const whatsappUrl = 'https://wa.me/message/KWXXB2FOPACRM1';
+const whatsappUrl = 'https://wa.me/message/LKQR4AI5Y474A1';
 
 const WhatsAppAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);

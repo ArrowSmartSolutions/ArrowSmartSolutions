@@ -133,10 +133,10 @@ const SupportDetail = ({ planId }) => {
         >
           <div className='text-center mb-16'>
             <div>
-              <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>{details.title}</h1>
+              <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold'>{details.title}</h1>
               <p className='mt-2 text-sm font-bold text-secondary'>{details.price}</p>
             </div>
-            <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 mt-4'>{details.description}</p>
+            <p className='text-xs sm:text-sm md:text-base lg:text-base text-dark2 mt-4'>{details.description}</p>
           </div>
 
           <motion.div

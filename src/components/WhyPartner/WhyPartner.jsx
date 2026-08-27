@@ -15,7 +15,7 @@ const WhyPartner = () => {
   return (
     <section className='bg-white'>
       <div className='container py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24'>
-        <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14 leading-tight'>Why Partner with Arrow Smart Solutions?</h2>
+        <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14 leading-tight'>Why Partner with Arrow Smart Solutions?</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-8 lg:gap-10'>
           {items.map((it) => (
             <div key={it.id} className='text-center'>

@@ -74,8 +74,8 @@ const SubscriptionPlans = () => {
     <section className='bg-light'>
       <div className='container py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24'>
         <div className='text-center pb-8 sm:pb-10 md:pb-12 lg:pb-14'>
-          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight'>Subscription Plans Built for South African Growth</h2>
-          <p className='mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-3xl mx-auto'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight'>Subscription Plans Built for South African Growth</h2>
+          <p className='mt-3 text-xs sm:text-sm md:text-base lg:text-base text-dark2 max-w-3xl mx-auto'>
             Three tiers designed for portfolios, SMEs, and enterprise teams with modern Next.js performance and clear monthly value.
           </p>
         </div>
@@ -97,14 +97,14 @@ const SubscriptionPlans = () => {
 
         <div className='text-center mt-10 sm:mt-12 md:mt-16'>
           <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-3'>Need help choosing the right tier?</h3>
-          <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-2xl mx-auto mb-6'>
+          <p className='text-xs sm:text-sm md:text-base lg:text-base text-dark2 max-w-2xl mx-auto mb-6'>
             Tell us your goals and we will map the best plan for traffic, conversion, and growth.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => router.push('/contact')}
-            className='primary-btn text-xs sm:text-sm md:text-base lg:text-lg py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'
+            className='primary-btn text-xs sm:text-sm md:text-base lg:text-base py-2.5 sm:py-3 md:py-3.5 px-5 sm:px-6 md:px-8'
           >
             Talk to Us
           </motion.button>

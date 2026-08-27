@@ -35,7 +35,7 @@ export default function StructuredData({ type = 'organization' }) {
     sameAs: [
       'https://www.instagram.com/arrowsmartsolutions',
       'https://x.com/arrowsmartlife',
-      'https://wa.me/message/KWXXB2FOPACRM1',
+      'https://wa.me/message/LKQR4AI5Y474A1',
     ],
   }
 

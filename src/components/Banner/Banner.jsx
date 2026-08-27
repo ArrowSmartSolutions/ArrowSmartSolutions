@@ -29,7 +29,7 @@ const Banner = () => {
                     viewport={{once:true}}
                     transition={{duration:0.5}}
 
-                     className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold !leading-snug'>
+                     className='text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold !leading-snug'>
                         Affordable, Reliable IT Solutions in South Africa
                     </motion.h1>
                 </div>
@@ -42,7 +42,7 @@ const Banner = () => {
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
                     <HiOutlineLightBulb className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Innovative Technologies</p>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-base'>Innovative Technologies</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.4)}
@@ -53,7 +53,7 @@ const Banner = () => {
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
                     <GiAfrica className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Local Market Expertise</p>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-base'>Local Market Expertise</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.6)}
@@ -64,7 +64,7 @@ const Banner = () => {
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
                     <BiTrendingUp className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Scalable Business Solutions</p>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-base'>Scalable Business Solutions</p>
                 </motion.div>
                 <motion.div
                 variants={FadeUp(0.8)}
@@ -75,7 +75,7 @@ const Banner = () => {
                  className='flex items-center gap-3 md:gap-4 p-2 sm:p-3 md:p-4 bg-[#f4f4f4] rounded-xl md:rounded-2xl
                  hover:bg-white duration-300 hover:shadow-2xl'>
                     <FiLock className='text-lg sm:text-xl md:text-2xl'/>
-                    <p className='text-xs sm:text-sm md:text-base lg:text-lg'>Transparent Development Process</p>
+                    <p className='text-xs sm:text-sm md:text-base lg:text-base'>Transparent Development Process</p>
                 </motion.div>
             </div>
 

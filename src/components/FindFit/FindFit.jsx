@@ -57,8 +57,8 @@ const FindFit = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-tight'>Find Your Perfect Fit</h2>
-          <p className='text-xs sm:text-sm md:text-base lg:text-lg text-dark2 max-w-[800px] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-tight'>Find Your Perfect Fit</h2>
+          <p className='text-xs sm:text-sm md:text-base lg:text-base text-dark2 max-w-[800px] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 leading-relaxed'>
             To better assist you, tell us a bit about your needs. Are you looking for a lower entry-point or a premium, comprehensive service?
           </p>
         </motion.div>
